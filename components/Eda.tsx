@@ -69,7 +69,7 @@ export default function Eda({ eda }: { eda: Report["eda"] }) {
         <Figure
           src={eda.charts.ttr}
           alt="질문별 어휘 다양성 TTR"
-          caption="TTR(Type-Token Ratio)=고유단어/전체토큰. 높을수록 다양한 어휘 사용."
+          caption="TTR=고유단어/전체토큰. ※ TTR은 글이 짧을수록 높아지는 경향(길이 교란)이 있어, 위 응답길이와 함께 해석해야 합니다 — 가장 짧은 Q4의 TTR이 높은 것은 이 영향."
         />
         <Table
           caption="Hapax 비율 = 단 한 번만 등장한 단어의 비율(높을수록 응답이 제각각)."

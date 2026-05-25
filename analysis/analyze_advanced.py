@@ -30,9 +30,11 @@ from sklearn.metrics.pairwise import cosine_similarity
 import statsmodels.api as sm
 import networkx as nx
 
+import os
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
 import seaborn as sns
 
 from analyze import (
@@ -41,9 +43,18 @@ from analyze import (
 )
 
 warnings.filterwarnings("ignore")
-plt.rcParams["font.family"] = "Malgun Gothic"
+
+# 한글 폰트: TTF를 명시적으로 등록한 뒤 내부 폰트명으로 지정 (Windows tofu 방지)
+_KFONT = "DejaVu Sans"
+for _fp in (r"C:\Windows\Fonts\malgun.ttf", r"C:\Windows\Fonts\NanumGothic.ttf"):
+    if os.path.exists(_fp):
+        fm.fontManager.addfont(_fp)
+        _KFONT = fm.FontProperties(fname=_fp).get_name()
+        break
+sns.set_style("whitegrid")           # 스타일 먼저 적용
+plt.rcParams["font.family"] = _KFONT  # 폰트는 이후에 확정(덮어쓰기 방지)
 plt.rcParams["axes.unicode_minus"] = False
-sns.set_style("whitegrid")
+print(f"[폰트] {_KFONT}")
 GREEN = "#1f8a55"
 PALETTE = ["#1f8a55", "#2f6fb0", "#d98324", "#9b5bb5", "#c2476a", "#3aa6a0"]
 

@@ -1,6 +1,7 @@
 import styles from "./Section.module.css";
 
 export default function Section({
+  id,
   index,
   title,
   subtitle,
@@ -8,6 +9,7 @@ export default function Section({
   tone,
   children,
 }: {
+  id?: string;
   index: number | string;
   title: string;
   subtitle?: string;
@@ -16,7 +18,10 @@ export default function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className={`${styles.section} ${tone === "appendix" ? styles.appendix : ""}`}>
+    <section
+      id={id}
+      className={`${styles.section} ${tone === "appendix" ? styles.appendix : ""}`}
+    >
       <header className={styles.head}>
         <span className={`${styles.badge} ${tone === "appendix" ? styles.badgeMuted : ""}`}>
           {index}
