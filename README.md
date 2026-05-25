@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 친환경소비행동 인터뷰 텍스트 분석
 
-## Getting Started
+서울중구가족센터 **친환경소비행동 활동 인터뷰**(응답자 20명 × 질문 4개 = 응답 80건)를
+분석하여 **주요 중심언어**를 도출하고, 데이터 **분량 적정성**을 진단하는 웹 리포트입니다.
 
-First, run the development server:
+🔗 **배포 주소**: (배포 후 갱신)
 
+## 분석 내용
+
+| 구분 | 내용 |
+|---|---|
+| **분량 적정성 진단** | 응답자·질문별 글자/어절/문장 수, 분석 충분성 판정 |
+| **중심언어 도출** | 단어 동시출현 의미연결망 → 연결·매개·위세 중심성 상위어 |
+| **핵심 키워드** | 전체 및 질문별 출현 빈도 상위 단어 |
+| **질문별 변별 키워드** | TF-IDF 기반 각 질문의 특징어 |
+
+### 질문 구성
+- **Q1.** 친환경소비행동 활동에 대한 전반적 느낀점
+- **Q2.** 가장 기억에 남는 활동
+- **Q3.** 활동 후 가정에서의 변화
+- **Q4.** 나의 다짐
+
+### 주요 결과(요약)
+- 중심언어 Top: **친환경소비행동 · 실천 · 사용 · 활동** (연결중심성 상위)
+- 매개 역할(서로 다른 주제군을 잇는 단어): **사용 · 실천**
+- 총 6,300여 어절 규모로 탐색적 텍스트 분석에 충분 (단, 표본 20명은 경향 파악 수준으로 해석)
+
+## 기술 스택
+
+- **분석**: Python · Kiwi(kiwipiepy) 형태소 분석 · scikit-learn(TF-IDF) · NetworkX(중심성·레이아웃)
+- **웹**: Next.js 16 (App Router, TypeScript) · CSS Modules · 의존성 없는 SVG 네트워크 시각화
+- **배포**: Vercel
+
+## 실행 방법
+
+### 1) 텍스트 분석 (결과 JSON 생성)
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cd analysis
+pip install -r requirements.txt
+python analyze.py        # -> ../public/data/report.json 생성
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2) 웹 대시보드
+```bash
+npm install
+npm run dev              # http://localhost:3000
+npm run build            # 프로덕션 빌드
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 디렉터리 구조
+```
+├── analysis/
+│   ├── data/                     # 원자료(인터뷰 txt/docx)
+│   ├── analyze.py                # 분석 파이프라인
+│   └── requirements.txt
+├── public/data/report.json       # 분석 결과(웹이 읽는 단일 데이터)
+├── lib/report.ts                 # 결과 타입 정의 + import
+├── components/                   # 대시보드 UI (Section/Hero/Adequacy/CentralWords/NetworkGraph/Keywords/Tfidf)
+└── app/                          # Next.js App Router
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 분석 방법 메모
+- 명사(NNG/NNP) 추출 후 1글자·불용어 제거, 도메인 복합어(친환경소비행동 등)는 사용자 사전으로 보존
+- 의미연결망은 응답 단위 동시출현을 **Ochiai(코사인) 연관강도**로 정규화해 약한 연결을 제거 → 중심성 변별력 확보
+- 네트워크 좌표는 `spring_layout`(seed 고정)으로 사전 계산해 정적 SVG로 렌더

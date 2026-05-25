@@ -1,0 +1,2990 @@
+{
+  "meta": {
+    "title": "친환경소비행동 인터뷰 텍스트 분석",
+    "subtitle": "서울중구가족센터 · 응답자 20명 × 질문 4개",
+    "generatedAt": "2026-05-25T13:14:03.731653+09:00",
+    "source": "eco_review_final_test0520.txt",
+    "questions": {
+      "Q1": "친환경소비행동 활동에 대한 전반적 느낀점",
+      "Q2": "가장 기억에 남는 활동",
+      "Q3": "활동 후 가정에서의 변화",
+      "Q4": "나의 다짐"
+    },
+    "method": "Kiwi 형태소분석 → 키워드 빈도 / TF-IDF / 의미연결망 중심성"
+  },
+  "adequacy": {
+    "totalResponses": 80,
+    "respondents": 20,
+    "questions": 4,
+    "totalCharsNoSpace": 20579,
+    "totalWords": 6344,
+    "totalSentences": 419,
+    "meanCharsPerResponse": 257.2,
+    "minCharsPerResponse": 56,
+    "maxCharsPerResponse": 636,
+    "byQuestion": [
+      {
+        "question": "Q1",
+        "label": "친환경소비행동 활동에 대한 전반적 느낀점",
+        "responses": 20,
+        "meanChars": 280.1,
+        "meanWords": 85.3,
+        "meanSentences": 5.0,
+        "totalChars": 5601
+      },
+      {
+        "question": "Q2",
+        "label": "가장 기억에 남는 활동",
+        "responses": 20,
+        "meanChars": 275.6,
+        "meanWords": 85.2,
+        "meanSentences": 5.8,
+        "totalChars": 5511
+      },
+      {
+        "question": "Q3",
+        "label": "활동 후 가정에서의 변화",
+        "responses": 20,
+        "meanChars": 289.9,
+        "meanWords": 91.2,
+        "meanSentences": 6.5,
+        "totalChars": 5797
+      },
+      {
+        "question": "Q4",
+        "label": "나의 다짐",
+        "responses": 20,
+        "meanChars": 183.5,
+        "meanWords": 55.5,
+        "meanSentences": 3.8,
+        "totalChars": 3670
+      }
+    ],
+    "perResponse": [
+      {
+        "respondent": "A",
+        "question": "Q1",
+        "chars": 298,
+        "words": 93,
+        "sentences": 6
+      },
+      {
+        "respondent": "A",
+        "question": "Q2",
+        "chars": 452,
+        "words": 131,
+        "sentences": 8
+      },
+      {
+        "respondent": "A",
+        "question": "Q3",
+        "chars": 174,
+        "words": 57,
+        "sentences": 4
+      },
+      {
+        "respondent": "A",
+        "question": "Q4",
+        "chars": 137,
+        "words": 35,
+        "sentences": 3
+      },
+      {
+        "respondent": "B",
+        "question": "Q1",
+        "chars": 301,
+        "words": 86,
+        "sentences": 6
+      },
+      {
+        "respondent": "B",
+        "question": "Q2",
+        "chars": 331,
+        "words": 96,
+        "sentences": 6
+      },
+      {
+        "respondent": "B",
+        "question": "Q3",
+        "chars": 344,
+        "words": 103,
+        "sentences": 8
+      },
+      {
+        "respondent": "B",
+        "question": "Q4",
+        "chars": 129,
+        "words": 36,
+        "sentences": 3
+      },
+      {
+        "respondent": "C",
+        "question": "Q1",
+        "chars": 385,
+        "words": 119,
+        "sentences": 5
+      },
+      {
+        "respondent": "C",
+        "question": "Q2",
+        "chars": 310,
+        "words": 95,
+        "sentences": 7
+      },
+      {
+        "respondent": "C",
+        "question": "Q3",
+        "chars": 636,
+        "words": 199,
+        "sentences": 18
+      },
+      {
+        "respondent": "C",
+        "question": "Q4",
+        "chars": 267,
+        "words": 75,
+        "sentences": 4
+      },
+      {
+        "respondent": "D",
+        "question": "Q1",
+        "chars": 63,
+        "words": 22,
+        "sentences": 1
+      },
+      {
+        "respondent": "D",
+        "question": "Q2",
+        "chars": 331,
+        "words": 105,
+        "sentences": 5
+      },
+      {
+        "respondent": "D",
+        "question": "Q3",
+        "chars": 593,
+        "words": 187,
+        "sentences": 10
+      },
+      {
+        "respondent": "D",
+        "question": "Q4",
+        "chars": 127,
+        "words": 36,
+        "sentences": 2
+      },
+      {
+        "respondent": "E",
+        "question": "Q1",
+        "chars": 386,
+        "words": 114,
+        "sentences": 5
+      },
+      {
+        "respondent": "E",
+        "question": "Q2",
+        "chars": 304,
+        "words": 100,
+        "sentences": 6
+      },
+      {
+        "respondent": "E",
+        "question": "Q3",
+        "chars": 236,
+        "words": 79,
+        "sentences": 4
+      },
+      {
+        "respondent": "E",
+        "question": "Q4",
+        "chars": 360,
+        "words": 124,
+        "sentences": 7
+      },
+      {
+        "respondent": "F",
+        "question": "Q1",
+        "chars": 447,
+        "words": 131,
+        "sentences": 11
+      },
+      {
+        "respondent": "F",
+        "question": "Q2",
+        "chars": 315,
+        "words": 95,
+        "sentences": 9
+      },
+      {
+        "respondent": "F",
+        "question": "Q3",
+        "chars": 248,
+        "words": 73,
+        "sentences": 8
+      },
+      {
+        "respondent": "F",
+        "question": "Q4",
+        "chars": 100,
+        "words": 34,
+        "sentences": 3
+      },
+      {
+        "respondent": "G",
+        "question": "Q1",
+        "chars": 233,
+        "words": 70,
+        "sentences": 4
+      },
+      {
+        "respondent": "G",
+        "question": "Q2",
+        "chars": 161,
+        "words": 57,
+        "sentences": 5
+      },
+      {
+        "respondent": "G",
+        "question": "Q3",
+        "chars": 227,
+        "words": 70,
+        "sentences": 5
+      },
+      {
+        "respondent": "G",
+        "question": "Q4",
+        "chars": 459,
+        "words": 146,
+        "sentences": 8
+      },
+      {
+        "respondent": "H",
+        "question": "Q1",
+        "chars": 576,
+        "words": 193,
+        "sentences": 8
+      },
+      {
+        "respondent": "H",
+        "question": "Q2",
+        "chars": 368,
+        "words": 121,
+        "sentences": 6
+      },
+      {
+        "respondent": "H",
+        "question": "Q3",
+        "chars": 427,
+        "words": 143,
+        "sentences": 6
+      },
+      {
+        "respondent": "H",
+        "question": "Q4",
+        "chars": 221,
+        "words": 76,
+        "sentences": 4
+      },
+      {
+        "respondent": "I",
+        "question": "Q1",
+        "chars": 596,
+        "words": 197,
+        "sentences": 11
+      },
+      {
+        "respondent": "I",
+        "question": "Q2",
+        "chars": 284,
+        "words": 97,
+        "sentences": 9
+      },
+      {
+        "respondent": "I",
+        "question": "Q3",
+        "chars": 333,
+        "words": 116,
+        "sentences": 9
+      },
+      {
+        "respondent": "I",
+        "question": "Q4",
+        "chars": 56,
+        "words": 17,
+        "sentences": 1
+      },
+      {
+        "respondent": "J",
+        "question": "Q1",
+        "chars": 232,
+        "words": 74,
+        "sentences": 4
+      },
+      {
+        "respondent": "J",
+        "question": "Q2",
+        "chars": 222,
+        "words": 63,
+        "sentences": 5
+      },
+      {
+        "respondent": "J",
+        "question": "Q3",
+        "chars": 538,
+        "words": 170,
+        "sentences": 14
+      },
+      {
+        "respondent": "J",
+        "question": "Q4",
+        "chars": 192,
+        "words": 70,
+        "sentences": 6
+      },
+      {
+        "respondent": "K",
+        "question": "Q1",
+        "chars": 322,
+        "words": 100,
+        "sentences": 7
+      },
+      {
+        "respondent": "K",
+        "question": "Q2",
+        "chars": 614,
+        "words": 191,
+        "sentences": 12
+      },
+      {
+        "respondent": "K",
+        "question": "Q3",
+        "chars": 461,
+        "words": 146,
+        "sentences": 7
+      },
+      {
+        "respondent": "K",
+        "question": "Q4",
+        "chars": 314,
+        "words": 94,
+        "sentences": 6
+      },
+      {
+        "respondent": "L",
+        "question": "Q1",
+        "chars": 224,
+        "words": 61,
+        "sentences": 3
+      },
+      {
+        "respondent": "L",
+        "question": "Q2",
+        "chars": 197,
+        "words": 66,
+        "sentences": 4
+      },
+      {
+        "respondent": "L",
+        "question": "Q3",
+        "chars": 190,
+        "words": 58,
+        "sentences": 4
+      },
+      {
+        "respondent": "L",
+        "question": "Q4",
+        "chars": 148,
+        "words": 41,
+        "sentences": 3
+      },
+      {
+        "respondent": "M",
+        "question": "Q1",
+        "chars": 184,
+        "words": 54,
+        "sentences": 4
+      },
+      {
+        "respondent": "M",
+        "question": "Q2",
+        "chars": 200,
+        "words": 61,
+        "sentences": 4
+      },
+      {
+        "respondent": "M",
+        "question": "Q3",
+        "chars": 182,
+        "words": 58,
+        "sentences": 4
+      },
+      {
+        "respondent": "M",
+        "question": "Q4",
+        "chars": 143,
+        "words": 37,
+        "sentences": 3
+      },
+      {
+        "respondent": "N",
+        "question": "Q1",
+        "chars": 189,
+        "words": 58,
+        "sentences": 4
+      },
+      {
+        "respondent": "N",
+        "question": "Q2",
+        "chars": 188,
+        "words": 54,
+        "sentences": 4
+      },
+      {
+        "respondent": "N",
+        "question": "Q3",
+        "chars": 158,
+        "words": 50,
+        "sentences": 4
+      },
+      {
+        "respondent": "N",
+        "question": "Q4",
+        "chars": 131,
+        "words": 37,
+        "sentences": 3
+      },
+      {
+        "respondent": "O",
+        "question": "Q1",
+        "chars": 195,
+        "words": 57,
+        "sentences": 4
+      },
+      {
+        "respondent": "O",
+        "question": "Q2",
+        "chars": 174,
+        "words": 55,
+        "sentences": 4
+      },
+      {
+        "respondent": "O",
+        "question": "Q3",
+        "chars": 149,
+        "words": 42,
+        "sentences": 4
+      },
+      {
+        "respondent": "O",
+        "question": "Q4",
+        "chars": 140,
+        "words": 40,
+        "sentences": 3
+      },
+      {
+        "respondent": "P",
+        "question": "Q1",
+        "chars": 174,
+        "words": 48,
+        "sentences": 3
+      },
+      {
+        "respondent": "P",
+        "question": "Q2",
+        "chars": 180,
+        "words": 56,
+        "sentences": 4
+      },
+      {
+        "respondent": "P",
+        "question": "Q3",
+        "chars": 146,
+        "words": 43,
+        "sentences": 4
+      },
+      {
+        "respondent": "P",
+        "question": "Q4",
+        "chars": 151,
+        "words": 44,
+        "sentences": 4
+      },
+      {
+        "respondent": "Q",
+        "question": "Q1",
+        "chars": 215,
+        "words": 62,
+        "sentences": 3
+      },
+      {
+        "respondent": "Q",
+        "question": "Q2",
+        "chars": 233,
+        "words": 71,
+        "sentences": 4
+      },
+      {
+        "respondent": "Q",
+        "question": "Q3",
+        "chars": 195,
+        "words": 60,
+        "sentences": 4
+      },
+      {
+        "respondent": "Q",
+        "question": "Q4",
+        "chars": 146,
+        "words": 39,
+        "sentences": 3
+      },
+      {
+        "respondent": "R",
+        "question": "Q1",
+        "chars": 193,
+        "words": 56,
+        "sentences": 4
+      },
+      {
+        "respondent": "R",
+        "question": "Q2",
+        "chars": 207,
+        "words": 63,
+        "sentences": 4
+      },
+      {
+        "respondent": "R",
+        "question": "Q3",
+        "chars": 187,
+        "words": 57,
+        "sentences": 4
+      },
+      {
+        "respondent": "R",
+        "question": "Q4",
+        "chars": 135,
+        "words": 41,
+        "sentences": 3
+      },
+      {
+        "respondent": "S",
+        "question": "Q1",
+        "chars": 201,
+        "words": 57,
+        "sentences": 3
+      },
+      {
+        "respondent": "S",
+        "question": "Q2",
+        "chars": 214,
+        "words": 59,
+        "sentences": 5
+      },
+      {
+        "respondent": "S",
+        "question": "Q3",
+        "chars": 179,
+        "words": 54,
+        "sentences": 4
+      },
+      {
+        "respondent": "S",
+        "question": "Q4",
+        "chars": 146,
+        "words": 38,
+        "sentences": 3
+      },
+      {
+        "respondent": "T",
+        "question": "Q1",
+        "chars": 187,
+        "words": 55,
+        "sentences": 3
+      },
+      {
+        "respondent": "T",
+        "question": "Q2",
+        "chars": 226,
+        "words": 67,
+        "sentences": 4
+      },
+      {
+        "respondent": "T",
+        "question": "Q3",
+        "chars": 194,
+        "words": 60,
+        "sentences": 4
+      },
+      {
+        "respondent": "T",
+        "question": "Q4",
+        "chars": 168,
+        "words": 49,
+        "sentences": 4
+      }
+    ],
+    "verdictLevel": "ok",
+    "verdict": "응답 80건·총 6,344어절(20,579자) 규모로, 키워드·의미연결망 등 탐색적(기술적) 텍스트 분석에 충분한 분량입니다. 다만 응답자 20명은 통계적 일반화·추론용으로는 표본이 작으므로, 결과는 '경향 파악' 수준으로 해석하는 것이 적절합니다."
+  },
+  "keywords": {
+    "overall": [
+      {
+        "word": "실천",
+        "count": 162
+      },
+      {
+        "word": "사용",
+        "count": 113
+      },
+      {
+        "word": "활동",
+        "count": 98
+      },
+      {
+        "word": "친환경소비행동",
+        "count": 92
+      },
+      {
+        "word": "센터",
+        "count": 68
+      },
+      {
+        "word": "물건",
+        "count": 58
+      },
+      {
+        "word": "환경",
+        "count": 54
+      },
+      {
+        "word": "필요",
+        "count": 47
+      },
+      {
+        "word": "노력",
+        "count": 47
+      },
+      {
+        "word": "종사자",
+        "count": 41
+      },
+      {
+        "word": "행동",
+        "count": 36
+      },
+      {
+        "word": "지속",
+        "count": 28
+      },
+      {
+        "word": "교육",
+        "count": 28
+      },
+      {
+        "word": "가정",
+        "count": 28
+      },
+      {
+        "word": "마켓",
+        "count": 27
+      },
+      {
+        "word": "사람",
+        "count": 26
+      },
+      {
+        "word": "가족",
+        "count": 26
+      },
+      {
+        "word": "친환경",
+        "count": 25
+      },
+      {
+        "word": "변화",
+        "count": 24
+      },
+      {
+        "word": "개인",
+        "count": 23
+      },
+      {
+        "word": "생활",
+        "count": 23
+      },
+      {
+        "word": "보호",
+        "count": 23
+      },
+      {
+        "word": "음식",
+        "count": 22
+      },
+      {
+        "word": "일회용품",
+        "count": 22
+      },
+      {
+        "word": "배달",
+        "count": 21
+      },
+      {
+        "word": "구매",
+        "count": 21
+      },
+      {
+        "word": "물품",
+        "count": 20
+      },
+      {
+        "word": "아이",
+        "count": 20
+      },
+      {
+        "word": "기억",
+        "count": 19
+      },
+      {
+        "word": "가능",
+        "count": 18
+      },
+      {
+        "word": "계획",
+        "count": 18
+      },
+      {
+        "word": "중요",
+        "count": 17
+      },
+      {
+        "word": "시작",
+        "count": 17
+      },
+      {
+        "word": "비닐",
+        "count": 17
+      },
+      {
+        "word": "제품",
+        "count": 17
+      },
+      {
+        "word": "활용",
+        "count": 17
+      },
+      {
+        "word": "습관",
+        "count": 17
+      },
+      {
+        "word": "참여",
+        "count": 16
+      },
+      {
+        "word": "프로그램",
+        "count": 16
+      },
+      {
+        "word": "텀블러",
+        "count": 16
+      },
+      {
+        "word": "개인컵",
+        "count": 16
+      },
+      {
+        "word": "일상",
+        "count": 16
+      },
+      {
+        "word": "선택",
+        "count": 16
+      },
+      {
+        "word": "소비",
+        "count": 15
+      },
+      {
+        "word": "참여자",
+        "count": 15
+      },
+      {
+        "word": "구입",
+        "count": 15
+      },
+      {
+        "word": "자연",
+        "count": 15
+      },
+      {
+        "word": "시간",
+        "count": 15
+      },
+      {
+        "word": "가치",
+        "count": 14
+      },
+      {
+        "word": "관심",
+        "count": 14
+      }
+    ],
+    "byQuestion": {
+      "Q1": [
+        {
+          "word": "실천",
+          "count": 47
+        },
+        {
+          "word": "친환경소비행동",
+          "count": 40
+        },
+        {
+          "word": "활동",
+          "count": 36
+        },
+        {
+          "word": "센터",
+          "count": 35
+        },
+        {
+          "word": "사용",
+          "count": 25
+        },
+        {
+          "word": "종사자",
+          "count": 19
+        },
+        {
+          "word": "환경",
+          "count": 19
+        },
+        {
+          "word": "교육",
+          "count": 15
+        },
+        {
+          "word": "지속",
+          "count": 12
+        },
+        {
+          "word": "행동",
+          "count": 12
+        },
+        {
+          "word": "물건",
+          "count": 10
+        },
+        {
+          "word": "보호",
+          "count": 10
+        },
+        {
+          "word": "참여",
+          "count": 9
+        },
+        {
+          "word": "혼자",
+          "count": 9
+        },
+        {
+          "word": "중요",
+          "count": 8
+        },
+        {
+          "word": "개인",
+          "count": 8
+        },
+        {
+          "word": "가능",
+          "count": 8
+        },
+        {
+          "word": "가치",
+          "count": 7
+        },
+        {
+          "word": "소비",
+          "count": 7
+        },
+        {
+          "word": "사람",
+          "count": 7
+        },
+        {
+          "word": "시작",
+          "count": 7
+        },
+        {
+          "word": "친환경",
+          "count": 7
+        },
+        {
+          "word": "필요",
+          "count": 6
+        },
+        {
+          "word": "텀블러",
+          "count": 6
+        },
+        {
+          "word": "마켓",
+          "count": 6
+        }
+      ],
+      "Q2": [
+        {
+          "word": "실천",
+          "count": 45
+        },
+        {
+          "word": "활동",
+          "count": 38
+        },
+        {
+          "word": "사용",
+          "count": 33
+        },
+        {
+          "word": "물건",
+          "count": 28
+        },
+        {
+          "word": "필요",
+          "count": 25
+        },
+        {
+          "word": "종사자",
+          "count": 19
+        },
+        {
+          "word": "마켓",
+          "count": 18
+        },
+        {
+          "word": "기억",
+          "count": 17
+        },
+        {
+          "word": "친환경소비행동",
+          "count": 15
+        },
+        {
+          "word": "사람",
+          "count": 13
+        },
+        {
+          "word": "행동",
+          "count": 12
+        },
+        {
+          "word": "경험",
+          "count": 11
+        },
+        {
+          "word": "교육",
+          "count": 11
+        },
+        {
+          "word": "센터",
+          "count": 11
+        },
+        {
+          "word": "계획",
+          "count": 11
+        },
+        {
+          "word": "환경",
+          "count": 10
+        },
+        {
+          "word": "개인컵",
+          "count": 10
+        },
+        {
+          "word": "워크숍",
+          "count": 9
+        },
+        {
+          "word": "노력",
+          "count": 8
+        },
+        {
+          "word": "친환경",
+          "count": 8
+        },
+        {
+          "word": "사무실",
+          "count": 8
+        },
+        {
+          "word": "빌딩",
+          "count": 7
+        },
+        {
+          "word": "개인",
+          "count": 6
+        },
+        {
+          "word": "물품",
+          "count": 6
+        },
+        {
+          "word": "참여자",
+          "count": 6
+        }
+      ],
+      "Q3": [
+        {
+          "word": "사용",
+          "count": 45
+        },
+        {
+          "word": "실천",
+          "count": 30
+        },
+        {
+          "word": "가정",
+          "count": 23
+        },
+        {
+          "word": "노력",
+          "count": 21
+        },
+        {
+          "word": "변화",
+          "count": 18
+        },
+        {
+          "word": "음식",
+          "count": 18
+        },
+        {
+          "word": "배달",
+          "count": 17
+        },
+        {
+          "word": "환경",
+          "count": 17
+        },
+        {
+          "word": "가족",
+          "count": 15
+        },
+        {
+          "word": "아이",
+          "count": 15
+        },
+        {
+          "word": "제품",
+          "count": 14
+        },
+        {
+          "word": "활동",
+          "count": 13
+        },
+        {
+          "word": "물건",
+          "count": 13
+        },
+        {
+          "word": "일회용품",
+          "count": 12
+        },
+        {
+          "word": "비닐",
+          "count": 11
+        },
+        {
+          "word": "구매",
+          "count": 10
+        },
+        {
+          "word": "친환경소비행동",
+          "count": 10
+        },
+        {
+          "word": "회사",
+          "count": 9
+        },
+        {
+          "word": "배출",
+          "count": 9
+        },
+        {
+          "word": "장바구니",
+          "count": 9
+        },
+        {
+          "word": "필요",
+          "count": 9
+        },
+        {
+          "word": "플라스틱",
+          "count": 8
+        },
+        {
+          "word": "봉투",
+          "count": 8
+        },
+        {
+          "word": "활용",
+          "count": 8
+        },
+        {
+          "word": "구입",
+          "count": 8
+        }
+      ],
+      "Q4": [
+        {
+          "word": "실천",
+          "count": 40
+        },
+        {
+          "word": "친환경소비행동",
+          "count": 27
+        },
+        {
+          "word": "센터",
+          "count": 18
+        },
+        {
+          "word": "노력",
+          "count": 13
+        },
+        {
+          "word": "활동",
+          "count": 11
+        },
+        {
+          "word": "지속",
+          "count": 10
+        },
+        {
+          "word": "사용",
+          "count": 10
+        },
+        {
+          "word": "생활",
+          "count": 9
+        },
+        {
+          "word": "가족",
+          "count": 8
+        },
+        {
+          "word": "환경",
+          "count": 8
+        },
+        {
+          "word": "필요",
+          "count": 7
+        },
+        {
+          "word": "물건",
+          "count": 7
+        },
+        {
+          "word": "중요",
+          "count": 6
+        },
+        {
+          "word": "개인",
+          "count": 6
+        },
+        {
+          "word": "사람",
+          "count": 6
+        },
+        {
+          "word": "프로그램",
+          "count": 6
+        },
+        {
+          "word": "구입",
+          "count": 6
+        },
+        {
+          "word": "참여자",
+          "count": 6
+        },
+        {
+          "word": "자연",
+          "count": 6
+        },
+        {
+          "word": "가능",
+          "count": 5
+        },
+        {
+          "word": "사회",
+          "count": 5
+        },
+        {
+          "word": "소비",
+          "count": 5
+        },
+        {
+          "word": "친환경",
+          "count": 5
+        },
+        {
+          "word": "구매",
+          "count": 5
+        },
+        {
+          "word": "주변",
+          "count": 5
+        }
+      ]
+    }
+  },
+  "tfidf": {
+    "Q1": [
+      {
+        "word": "실천",
+        "score": 0.4336
+      },
+      {
+        "word": "친환경소비행동",
+        "score": 0.369
+      },
+      {
+        "word": "활동",
+        "score": 0.3321
+      },
+      {
+        "word": "센터",
+        "score": 0.3229
+      },
+      {
+        "word": "사용",
+        "score": 0.2306
+      },
+      {
+        "word": "종사자",
+        "score": 0.2144
+      },
+      {
+        "word": "환경",
+        "score": 0.1753
+      },
+      {
+        "word": "교육",
+        "score": 0.1693
+      },
+      {
+        "word": "혼자",
+        "score": 0.1591
+      },
+      {
+        "word": "지속",
+        "score": 0.1107
+      },
+      {
+        "word": "행동",
+        "score": 0.1107
+      },
+      {
+        "word": "물건",
+        "score": 0.0923
+      },
+      {
+        "word": "보호",
+        "score": 0.0923
+      },
+      {
+        "word": "친환경소비",
+        "score": 0.0884
+      },
+      {
+        "word": "참여",
+        "score": 0.083
+      }
+    ],
+    "Q2": [
+      {
+        "word": "실천",
+        "score": 0.4076
+      },
+      {
+        "word": "활동",
+        "score": 0.3442
+      },
+      {
+        "word": "사용",
+        "score": 0.2989
+      },
+      {
+        "word": "물건",
+        "score": 0.2536
+      },
+      {
+        "word": "기억",
+        "score": 0.2326
+      },
+      {
+        "word": "필요",
+        "score": 0.2264
+      },
+      {
+        "word": "종사자",
+        "score": 0.2105
+      },
+      {
+        "word": "마켓",
+        "score": 0.1994
+      },
+      {
+        "word": "경험",
+        "score": 0.1505
+      },
+      {
+        "word": "사람",
+        "score": 0.144
+      },
+      {
+        "word": "친환경소비행동",
+        "score": 0.1359
+      },
+      {
+        "word": "워크숍",
+        "score": 0.1232
+      },
+      {
+        "word": "교육",
+        "score": 0.1219
+      },
+      {
+        "word": "개인컵",
+        "score": 0.1108
+      },
+      {
+        "word": "행동",
+        "score": 0.1087
+      }
+    ],
+    "Q3": [
+      {
+        "word": "사용",
+        "score": 0.4163
+      },
+      {
+        "word": "실천",
+        "score": 0.2775
+      },
+      {
+        "word": "가정",
+        "score": 0.2602
+      },
+      {
+        "word": "변화",
+        "score": 0.2037
+      },
+      {
+        "word": "음식",
+        "score": 0.2037
+      },
+      {
+        "word": "노력",
+        "score": 0.1943
+      },
+      {
+        "word": "배달",
+        "score": 0.1923
+      },
+      {
+        "word": "아이",
+        "score": 0.1697
+      },
+      {
+        "word": "제품",
+        "score": 0.1584
+      },
+      {
+        "word": "환경",
+        "score": 0.1573
+      },
+      {
+        "word": "가족",
+        "score": 0.1388
+      },
+      {
+        "word": "비닐",
+        "score": 0.1245
+      },
+      {
+        "word": "주문",
+        "score": 0.1241
+      },
+      {
+        "word": "물건",
+        "score": 0.1203
+      },
+      {
+        "word": "활동",
+        "score": 0.1203
+      }
+    ],
+    "Q4": [
+      {
+        "word": "실천",
+        "score": 0.5501
+      },
+      {
+        "word": "친환경소비행동",
+        "score": 0.3713
+      },
+      {
+        "word": "센터",
+        "score": 0.2476
+      },
+      {
+        "word": "노력",
+        "score": 0.1788
+      },
+      {
+        "word": "활동",
+        "score": 0.1513
+      },
+      {
+        "word": "사용",
+        "score": 0.1375
+      },
+      {
+        "word": "지속",
+        "score": 0.1375
+      },
+      {
+        "word": "생활",
+        "score": 0.1238
+      },
+      {
+        "word": "가족",
+        "score": 0.11
+      },
+      {
+        "word": "환경",
+        "score": 0.11
+      },
+      {
+        "word": "세상",
+        "score": 0.1054
+      },
+      {
+        "word": "주변",
+        "score": 0.1039
+      },
+      {
+        "word": "구입",
+        "score": 0.1009
+      },
+      {
+        "word": "사람",
+        "score": 0.1009
+      },
+      {
+        "word": "참여자",
+        "score": 0.1009
+      }
+    ]
+  },
+  "network": {
+    "nodes": [
+      {
+        "id": "실천",
+        "freq": 162,
+        "degree": 0.5641,
+        "betweenness": 0.1235,
+        "eigenvector": 0.3535,
+        "community": 0,
+        "x": 0.4208,
+        "y": 0.3823
+      },
+      {
+        "id": "사용",
+        "freq": 113,
+        "degree": 0.5385,
+        "betweenness": 0.1323,
+        "eigenvector": 0.2919,
+        "community": 1,
+        "x": 0.359,
+        "y": 0.4691
+      },
+      {
+        "id": "활동",
+        "freq": 98,
+        "degree": 0.5128,
+        "betweenness": 0.056,
+        "eigenvector": 0.3284,
+        "community": 0,
+        "x": 0.4351,
+        "y": 0.2608
+      },
+      {
+        "id": "친환경소비행동",
+        "freq": 92,
+        "degree": 0.6154,
+        "betweenness": 0.1161,
+        "eigenvector": 0.3532,
+        "community": 0,
+        "x": 0.4495,
+        "y": 0.3538
+      },
+      {
+        "id": "센터",
+        "freq": 68,
+        "degree": 0.3846,
+        "betweenness": 0.054,
+        "eigenvector": 0.2716,
+        "community": 0,
+        "x": 0.3772,
+        "y": 0.2956
+      },
+      {
+        "id": "물건",
+        "freq": 58,
+        "degree": 0.2308,
+        "betweenness": 0.0378,
+        "eigenvector": 0.1312,
+        "community": 2,
+        "x": 0.5641,
+        "y": 0.4694
+      },
+      {
+        "id": "환경",
+        "freq": 54,
+        "degree": 0.3846,
+        "betweenness": 0.0688,
+        "eigenvector": 0.2751,
+        "community": 0,
+        "x": 0.383,
+        "y": 0.3399
+      },
+      {
+        "id": "필요",
+        "freq": 47,
+        "degree": 0.2051,
+        "betweenness": 0.0027,
+        "eigenvector": 0.1458,
+        "community": 2,
+        "x": 0.5116,
+        "y": 0.43
+      },
+      {
+        "id": "노력",
+        "freq": 47,
+        "degree": 0.3077,
+        "betweenness": 0.0607,
+        "eigenvector": 0.1569,
+        "community": 1,
+        "x": 0.4326,
+        "y": 0.5035
+      },
+      {
+        "id": "종사자",
+        "freq": 41,
+        "degree": 0.3846,
+        "betweenness": 0.058,
+        "eigenvector": 0.2518,
+        "community": 0,
+        "x": 0.4776,
+        "y": 0.247
+      },
+      {
+        "id": "행동",
+        "freq": 36,
+        "degree": 0.2051,
+        "betweenness": 0.0,
+        "eigenvector": 0.183,
+        "community": 0,
+        "x": 0.3965,
+        "y": 0.2098
+      },
+      {
+        "id": "지속",
+        "freq": 28,
+        "degree": 0.2564,
+        "betweenness": 0.0081,
+        "eigenvector": 0.187,
+        "community": 0,
+        "x": 0.3197,
+        "y": 0.3181
+      },
+      {
+        "id": "교육",
+        "freq": 28,
+        "degree": 0.2821,
+        "betweenness": 0.0459,
+        "eigenvector": 0.2135,
+        "community": 0,
+        "x": 0.3596,
+        "y": 0.2256
+      },
+      {
+        "id": "가정",
+        "freq": 28,
+        "degree": 0.2308,
+        "betweenness": 0.0675,
+        "eigenvector": 0.0795,
+        "community": 1,
+        "x": 0.3337,
+        "y": 0.7032
+      },
+      {
+        "id": "마켓",
+        "freq": 27,
+        "degree": 0.2308,
+        "betweenness": 0.0243,
+        "eigenvector": 0.1166,
+        "community": 2,
+        "x": 0.5648,
+        "y": 0.345
+      },
+      {
+        "id": "사람",
+        "freq": 26,
+        "degree": 0.1538,
+        "betweenness": 0.0162,
+        "eigenvector": 0.0839,
+        "community": 2,
+        "x": 0.6625,
+        "y": 0.3347
+      },
+      {
+        "id": "가족",
+        "freq": 26,
+        "degree": 0.1282,
+        "betweenness": 0.0121,
+        "eigenvector": 0.0886,
+        "community": 1,
+        "x": 0.315,
+        "y": 0.5229
+      },
+      {
+        "id": "친환경",
+        "freq": 25,
+        "degree": 0.1538,
+        "betweenness": 0.0013,
+        "eigenvector": 0.1021,
+        "community": 2,
+        "x": 0.6073,
+        "y": 0.4133
+      },
+      {
+        "id": "변화",
+        "freq": 24,
+        "degree": 0.2308,
+        "betweenness": 0.0661,
+        "eigenvector": 0.0937,
+        "community": 1,
+        "x": 0.3516,
+        "y": 0.6233
+      },
+      {
+        "id": "개인",
+        "freq": 23,
+        "degree": 0.1795,
+        "betweenness": 0.0081,
+        "eigenvector": 0.1363,
+        "community": 0,
+        "x": 0.5397,
+        "y": 0.2594
+      },
+      {
+        "id": "생활",
+        "freq": 23,
+        "degree": 0.1026,
+        "betweenness": 0.0013,
+        "eigenvector": 0.0608,
+        "community": 1,
+        "x": 0.2171,
+        "y": 0.4106
+      },
+      {
+        "id": "보호",
+        "freq": 23,
+        "degree": 0.1795,
+        "betweenness": 0.004,
+        "eigenvector": 0.1464,
+        "community": 0,
+        "x": 0.2597,
+        "y": 0.2743
+      },
+      {
+        "id": "음식",
+        "freq": 22,
+        "degree": 0.1795,
+        "betweenness": 0.0027,
+        "eigenvector": 0.0649,
+        "community": 1,
+        "x": 0.2715,
+        "y": 0.6708
+      },
+      {
+        "id": "일회용품",
+        "freq": 22,
+        "degree": 0.2051,
+        "betweenness": 0.0405,
+        "eigenvector": 0.1028,
+        "community": 1,
+        "x": 0.2588,
+        "y": 0.5208
+      },
+      {
+        "id": "배달",
+        "freq": 21,
+        "degree": 0.1795,
+        "betweenness": 0.0,
+        "eigenvector": 0.0712,
+        "community": 1,
+        "x": 0.2368,
+        "y": 0.6287
+      },
+      {
+        "id": "구매",
+        "freq": 21,
+        "degree": 0.1795,
+        "betweenness": 0.0351,
+        "eigenvector": 0.0546,
+        "community": 2,
+        "x": 0.5314,
+        "y": 0.6637
+      },
+      {
+        "id": "물품",
+        "freq": 20,
+        "degree": 0.1795,
+        "betweenness": 0.0607,
+        "eigenvector": 0.0438,
+        "community": 2,
+        "x": 0.7138,
+        "y": 0.552
+      },
+      {
+        "id": "아이",
+        "freq": 20,
+        "degree": 0.0256,
+        "betweenness": 0.0,
+        "eigenvector": 0.0056,
+        "community": 1,
+        "x": 0.2468,
+        "y": 1.0
+      },
+      {
+        "id": "기억",
+        "freq": 19,
+        "degree": 0.0513,
+        "betweenness": 0.0,
+        "eigenvector": 0.04,
+        "community": 0,
+        "x": 0.5435,
+        "y": 0.0068
+      },
+      {
+        "id": "가능",
+        "freq": 18,
+        "degree": 0.1538,
+        "betweenness": 0.0,
+        "eigenvector": 0.1107,
+        "community": 0,
+        "x": 0.257,
+        "y": 0.2015
+      },
+      {
+        "id": "계획",
+        "freq": 18,
+        "degree": 0.1282,
+        "betweenness": 0.0,
+        "eigenvector": 0.094,
+        "community": 0,
+        "x": 0.3924,
+        "y": 0.106
+      },
+      {
+        "id": "중요",
+        "freq": 17,
+        "degree": 0.0769,
+        "betweenness": 0.0,
+        "eigenvector": 0.0656,
+        "community": 0,
+        "x": 0.5979,
+        "y": 0.192
+      },
+      {
+        "id": "시작",
+        "freq": 17,
+        "degree": 0.0513,
+        "betweenness": 0.0,
+        "eigenvector": 0.0345,
+        "community": 0,
+        "x": 0.287,
+        "y": 0.0
+      },
+      {
+        "id": "비닐",
+        "freq": 17,
+        "degree": 0.1282,
+        "betweenness": 0.0,
+        "eigenvector": 0.0438,
+        "community": 1,
+        "x": 0.2037,
+        "y": 0.7225
+      },
+      {
+        "id": "제품",
+        "freq": 17,
+        "degree": 0.0513,
+        "betweenness": 0.0,
+        "eigenvector": 0.0116,
+        "community": 2,
+        "x": 0.5014,
+        "y": 0.8517
+      },
+      {
+        "id": "활용",
+        "freq": 17,
+        "degree": 0.0256,
+        "betweenness": 0.0,
+        "eigenvector": 0.003,
+        "community": 2,
+        "x": 1.0,
+        "y": 0.6718
+      },
+      {
+        "id": "습관",
+        "freq": 17,
+        "degree": 0.0769,
+        "betweenness": 0.0013,
+        "eigenvector": 0.0485,
+        "community": 2,
+        "x": 0.5473,
+        "y": 0.5952
+      },
+      {
+        "id": "참여",
+        "freq": 16,
+        "degree": 0.1282,
+        "betweenness": 0.0,
+        "eigenvector": 0.1006,
+        "community": 0,
+        "x": 0.5117,
+        "y": 0.1457
+      },
+      {
+        "id": "프로그램",
+        "freq": 16,
+        "degree": 0.1026,
+        "betweenness": 0.0121,
+        "eigenvector": 0.0411,
+        "community": 2,
+        "x": 0.7118,
+        "y": 0.4569
+      },
+      {
+        "id": "텀블러",
+        "freq": 16,
+        "degree": 0.0256,
+        "betweenness": 0.0,
+        "eigenvector": 0.0188,
+        "community": 1,
+        "x": 0.0,
+        "y": 0.4171
+      }
+    ],
+    "edges": [
+      {
+        "source": "실천",
+        "target": "개인",
+        "weight": 0.511,
+        "count": 18
+      },
+      {
+        "source": "실천",
+        "target": "물건",
+        "weight": 0.443,
+        "count": 17
+      },
+      {
+        "source": "실천",
+        "target": "사람",
+        "weight": 0.423,
+        "count": 13
+      },
+      {
+        "source": "실천",
+        "target": "종사자",
+        "weight": 0.561,
+        "count": 24
+      },
+      {
+        "source": "실천",
+        "target": "중요",
+        "weight": 0.418,
+        "count": 12
+      },
+      {
+        "source": "실천",
+        "target": "친환경소비행동",
+        "weight": 0.857,
+        "count": 47
+      },
+      {
+        "source": "실천",
+        "target": "필요",
+        "weight": 0.418,
+        "count": 17
+      },
+      {
+        "source": "실천",
+        "target": "노력",
+        "weight": 0.529,
+        "count": 23
+      },
+      {
+        "source": "실천",
+        "target": "센터",
+        "weight": 0.675,
+        "count": 34
+      },
+      {
+        "source": "실천",
+        "target": "교육",
+        "weight": 0.527,
+        "count": 19
+      },
+      {
+        "source": "실천",
+        "target": "사용",
+        "weight": 0.709,
+        "count": 40
+      },
+      {
+        "source": "실천",
+        "target": "일회용품",
+        "weight": 0.442,
+        "count": 14
+      },
+      {
+        "source": "실천",
+        "target": "지속",
+        "weight": 0.558,
+        "count": 21
+      },
+      {
+        "source": "실천",
+        "target": "환경",
+        "weight": 0.706,
+        "count": 33
+      },
+      {
+        "source": "실천",
+        "target": "활동",
+        "weight": 0.733,
+        "count": 39
+      },
+      {
+        "source": "실천",
+        "target": "계획",
+        "weight": 0.433,
+        "count": 12
+      },
+      {
+        "source": "실천",
+        "target": "친환경",
+        "weight": 0.483,
+        "count": 17
+      },
+      {
+        "source": "실천",
+        "target": "행동",
+        "weight": 0.587,
+        "count": 23
+      },
+      {
+        "source": "실천",
+        "target": "가정",
+        "weight": 0.408,
+        "count": 14
+      },
+      {
+        "source": "실천",
+        "target": "가족",
+        "weight": 0.495,
+        "count": 17
+      },
+      {
+        "source": "실천",
+        "target": "변화",
+        "weight": 0.43,
+        "count": 14
+      },
+      {
+        "source": "실천",
+        "target": "보호",
+        "weight": 0.474,
+        "count": 15
+      },
+      {
+        "source": "사용",
+        "target": "노력",
+        "weight": 0.529,
+        "count": 22
+      },
+      {
+        "source": "사용",
+        "target": "배달",
+        "weight": 0.51,
+        "count": 15
+      },
+      {
+        "source": "사용",
+        "target": "변화",
+        "weight": 0.513,
+        "count": 16
+      },
+      {
+        "source": "사용",
+        "target": "음식",
+        "weight": 0.453,
+        "count": 12
+      },
+      {
+        "source": "사용",
+        "target": "일회용품",
+        "weight": 0.561,
+        "count": 17
+      },
+      {
+        "source": "사용",
+        "target": "교육",
+        "weight": 0.464,
+        "count": 16
+      },
+      {
+        "source": "사용",
+        "target": "센터",
+        "weight": 0.498,
+        "count": 24
+      },
+      {
+        "source": "사용",
+        "target": "종사자",
+        "weight": 0.489,
+        "count": 20
+      },
+      {
+        "source": "사용",
+        "target": "친환경소비행동",
+        "weight": 0.648,
+        "count": 34
+      },
+      {
+        "source": "사용",
+        "target": "텀블러",
+        "weight": 0.41,
+        "count": 10
+      },
+      {
+        "source": "사용",
+        "target": "환경",
+        "weight": 0.515,
+        "count": 23
+      },
+      {
+        "source": "사용",
+        "target": "활동",
+        "weight": 0.687,
+        "count": 35
+      },
+      {
+        "source": "사용",
+        "target": "가정",
+        "weight": 0.517,
+        "count": 17
+      },
+      {
+        "source": "사용",
+        "target": "가족",
+        "weight": 0.426,
+        "count": 14
+      },
+      {
+        "source": "사용",
+        "target": "구매",
+        "weight": 0.492,
+        "count": 14
+      },
+      {
+        "source": "사용",
+        "target": "비닐",
+        "weight": 0.471,
+        "count": 12
+      },
+      {
+        "source": "사용",
+        "target": "습관",
+        "weight": 0.457,
+        "count": 13
+      },
+      {
+        "source": "사용",
+        "target": "필요",
+        "weight": 0.54,
+        "count": 21
+      },
+      {
+        "source": "사용",
+        "target": "행동",
+        "weight": 0.507,
+        "count": 19
+      },
+      {
+        "source": "사용",
+        "target": "물건",
+        "weight": 0.544,
+        "count": 20
+      },
+      {
+        "source": "활동",
+        "target": "가능",
+        "weight": 0.433,
+        "count": 12
+      },
+      {
+        "source": "활동",
+        "target": "교육",
+        "weight": 0.615,
+        "count": 20
+      },
+      {
+        "source": "활동",
+        "target": "마켓",
+        "weight": 0.505,
+        "count": 14
+      },
+      {
+        "source": "활동",
+        "target": "센터",
+        "weight": 0.66,
+        "count": 30
+      },
+      {
+        "source": "활동",
+        "target": "시작",
+        "weight": 0.4,
+        "count": 10
+      },
+      {
+        "source": "활동",
+        "target": "종사자",
+        "weight": 0.648,
+        "count": 25
+      },
+      {
+        "source": "활동",
+        "target": "지속",
+        "weight": 0.53,
+        "count": 18
+      },
+      {
+        "source": "활동",
+        "target": "친환경소비행동",
+        "weight": 0.647,
+        "count": 32
+      },
+      {
+        "source": "활동",
+        "target": "환경",
+        "weight": 0.664,
+        "count": 28
+      },
+      {
+        "source": "활동",
+        "target": "개인",
+        "weight": 0.504,
+        "count": 16
+      },
+      {
+        "source": "활동",
+        "target": "계획",
+        "weight": 0.44,
+        "count": 11
+      },
+      {
+        "source": "활동",
+        "target": "기억",
+        "weight": 0.417,
+        "count": 10
+      },
+      {
+        "source": "활동",
+        "target": "친환경",
+        "weight": 0.535,
+        "count": 17
+      },
+      {
+        "source": "활동",
+        "target": "행동",
+        "weight": 0.594,
+        "count": 21
+      },
+      {
+        "source": "활동",
+        "target": "필요",
+        "weight": 0.464,
+        "count": 17
+      },
+      {
+        "source": "활동",
+        "target": "물건",
+        "weight": 0.404,
+        "count": 14
+      },
+      {
+        "source": "활동",
+        "target": "참여",
+        "weight": 0.48,
+        "count": 12
+      },
+      {
+        "source": "활동",
+        "target": "보호",
+        "weight": 0.455,
+        "count": 13
+      },
+      {
+        "source": "친환경소비행동",
+        "target": "개인",
+        "weight": 0.458,
+        "count": 15
+      },
+      {
+        "source": "친환경소비행동",
+        "target": "물건",
+        "weight": 0.448,
+        "count": 16
+      },
+      {
+        "source": "친환경소비행동",
+        "target": "사람",
+        "weight": 0.42,
+        "count": 12
+      },
+      {
+        "source": "친환경소비행동",
+        "target": "종사자",
+        "weight": 0.604,
+        "count": 24
+      },
+      {
+        "source": "친환경소비행동",
+        "target": "중요",
+        "weight": 0.449,
+        "count": 12
+      },
+      {
+        "source": "친환경소비행동",
+        "target": "참여",
+        "weight": 0.505,
+        "count": 13
+      },
+      {
+        "source": "친환경소비행동",
+        "target": "프로그램",
+        "weight": 0.404,
+        "count": 10
+      },
+      {
+        "source": "친환경소비행동",
+        "target": "필요",
+        "weight": 0.503,
+        "count": 19
+      },
+      {
+        "source": "친환경소비행동",
+        "target": "노력",
+        "weight": 0.545,
+        "count": 22
+      },
+      {
+        "source": "친환경소비행동",
+        "target": "센터",
+        "weight": 0.683,
+        "count": 32
+      },
+      {
+        "source": "친환경소비행동",
+        "target": "가능",
+        "weight": 0.42,
+        "count": 12
+      },
+      {
+        "source": "친환경소비행동",
+        "target": "교육",
+        "weight": 0.567,
+        "count": 19
+      },
+      {
+        "source": "친환경소비행동",
+        "target": "일회용품",
+        "weight": 0.408,
+        "count": 12
+      },
+      {
+        "source": "친환경소비행동",
+        "target": "지속",
+        "weight": 0.543,
+        "count": 19
+      },
+      {
+        "source": "친환경소비행동",
+        "target": "환경",
+        "weight": 0.668,
+        "count": 29
+      },
+      {
+        "source": "친환경소비행동",
+        "target": "생활",
+        "weight": 0.462,
+        "count": 14
+      },
+      {
+        "source": "친환경소비행동",
+        "target": "친환경",
+        "weight": 0.428,
+        "count": 14
+      },
+      {
+        "source": "친환경소비행동",
+        "target": "행동",
+        "weight": 0.549,
+        "count": 20
+      },
+      {
+        "source": "친환경소비행동",
+        "target": "가족",
+        "weight": 0.407,
+        "count": 13
+      },
+      {
+        "source": "친환경소비행동",
+        "target": "습관",
+        "weight": 0.434,
+        "count": 12
+      },
+      {
+        "source": "친환경소비행동",
+        "target": "보호",
+        "weight": 0.475,
+        "count": 14
+      },
+      {
+        "source": "센터",
+        "target": "개인",
+        "weight": 0.466,
+        "count": 14
+      },
+      {
+        "source": "센터",
+        "target": "노력",
+        "weight": 0.485,
+        "count": 18
+      },
+      {
+        "source": "센터",
+        "target": "중요",
+        "weight": 0.408,
+        "count": 10
+      },
+      {
+        "source": "센터",
+        "target": "가능",
+        "weight": 0.457,
+        "count": 12
+      },
+      {
+        "source": "센터",
+        "target": "교육",
+        "weight": 0.455,
+        "count": 14
+      },
+      {
+        "source": "센터",
+        "target": "종사자",
+        "weight": 0.52,
+        "count": 19
+      },
+      {
+        "source": "센터",
+        "target": "지속",
+        "weight": 0.498,
+        "count": 16
+      },
+      {
+        "source": "센터",
+        "target": "환경",
+        "weight": 0.577,
+        "count": 23
+      },
+      {
+        "source": "센터",
+        "target": "생활",
+        "weight": 0.431,
+        "count": 12
+      },
+      {
+        "source": "센터",
+        "target": "행동",
+        "weight": 0.538,
+        "count": 18
+      },
+      {
+        "source": "센터",
+        "target": "보호",
+        "weight": 0.444,
+        "count": 12
+      },
+      {
+        "source": "물건",
+        "target": "사람",
+        "weight": 0.5,
+        "count": 10
+      },
+      {
+        "source": "물건",
+        "target": "필요",
+        "weight": 0.643,
+        "count": 17
+      },
+      {
+        "source": "물건",
+        "target": "마켓",
+        "weight": 0.45,
+        "count": 9
+      },
+      {
+        "source": "물건",
+        "target": "물품",
+        "weight": 0.404,
+        "count": 7
+      },
+      {
+        "source": "물건",
+        "target": "구매",
+        "weight": 0.413,
+        "count": 8
+      },
+      {
+        "source": "환경",
+        "target": "가능",
+        "weight": 0.411,
+        "count": 10
+      },
+      {
+        "source": "환경",
+        "target": "교육",
+        "weight": 0.561,
+        "count": 16
+      },
+      {
+        "source": "환경",
+        "target": "마켓",
+        "weight": 0.411,
+        "count": 10
+      },
+      {
+        "source": "환경",
+        "target": "종사자",
+        "weight": 0.472,
+        "count": 16
+      },
+      {
+        "source": "환경",
+        "target": "지속",
+        "weight": 0.537,
+        "count": 16
+      },
+      {
+        "source": "환경",
+        "target": "개인",
+        "weight": 0.43,
+        "count": 12
+      },
+      {
+        "source": "환경",
+        "target": "노력",
+        "weight": 0.407,
+        "count": 14
+      },
+      {
+        "source": "환경",
+        "target": "변화",
+        "weight": 0.426,
+        "count": 11
+      },
+      {
+        "source": "환경",
+        "target": "보호",
+        "weight": 0.678,
+        "count": 17
+      },
+      {
+        "source": "환경",
+        "target": "참여",
+        "weight": 0.456,
+        "count": 10
+      },
+      {
+        "source": "필요",
+        "target": "개인",
+        "weight": 0.454,
+        "count": 11
+      },
+      {
+        "source": "필요",
+        "target": "종사자",
+        "weight": 0.475,
+        "count": 14
+      },
+      {
+        "source": "필요",
+        "target": "구매",
+        "weight": 0.488,
+        "count": 10
+      },
+      {
+        "source": "노력",
+        "target": "물품",
+        "weight": 0.408,
+        "count": 8
+      },
+      {
+        "source": "노력",
+        "target": "친환경",
+        "weight": 0.463,
+        "count": 12
+      },
+      {
+        "source": "노력",
+        "target": "프로그램",
+        "weight": 0.408,
+        "count": 8
+      },
+      {
+        "source": "노력",
+        "target": "배달",
+        "weight": 0.53,
+        "count": 12
+      },
+      {
+        "source": "노력",
+        "target": "생활",
+        "weight": 0.417,
+        "count": 10
+      },
+      {
+        "source": "노력",
+        "target": "음식",
+        "weight": 0.49,
+        "count": 10
+      },
+      {
+        "source": "노력",
+        "target": "일회용품",
+        "weight": 0.429,
+        "count": 10
+      },
+      {
+        "source": "종사자",
+        "target": "사람",
+        "weight": 0.404,
+        "count": 9
+      },
+      {
+        "source": "종사자",
+        "target": "참여",
+        "weight": 0.448,
+        "count": 9
+      },
+      {
+        "source": "종사자",
+        "target": "기억",
+        "weight": 0.467,
+        "count": 9
+      },
+      {
+        "source": "종사자",
+        "target": "마켓",
+        "weight": 0.494,
+        "count": 11
+      },
+      {
+        "source": "종사자",
+        "target": "교육",
+        "weight": 0.613,
+        "count": 16
+      },
+      {
+        "source": "종사자",
+        "target": "지속",
+        "weight": 0.477,
+        "count": 13
+      },
+      {
+        "source": "종사자",
+        "target": "계획",
+        "weight": 0.448,
+        "count": 9
+      },
+      {
+        "source": "종사자",
+        "target": "행동",
+        "weight": 0.423,
+        "count": 12
+      },
+      {
+        "source": "행동",
+        "target": "계획",
+        "weight": 0.544,
+        "count": 10
+      },
+      {
+        "source": "행동",
+        "target": "교육",
+        "weight": 0.544,
+        "count": 13
+      },
+      {
+        "source": "지속",
+        "target": "가능",
+        "weight": 0.612,
+        "count": 12
+      },
+      {
+        "source": "지속",
+        "target": "마켓",
+        "weight": 0.408,
+        "count": 8
+      },
+      {
+        "source": "지속",
+        "target": "가족",
+        "weight": 0.411,
+        "count": 9
+      },
+      {
+        "source": "지속",
+        "target": "보호",
+        "weight": 0.495,
+        "count": 10
+      },
+      {
+        "source": "교육",
+        "target": "마켓",
+        "weight": 0.426,
+        "count": 8
+      },
+      {
+        "source": "교육",
+        "target": "시작",
+        "weight": 0.414,
+        "count": 7
+      },
+      {
+        "source": "교육",
+        "target": "계획",
+        "weight": 0.414,
+        "count": 7
+      },
+      {
+        "source": "가정",
+        "target": "가족",
+        "weight": 0.55,
+        "count": 11
+      },
+      {
+        "source": "가정",
+        "target": "구매",
+        "weight": 0.404,
+        "count": 7
+      },
+      {
+        "source": "가정",
+        "target": "배달",
+        "weight": 0.503,
+        "count": 9
+      },
+      {
+        "source": "가정",
+        "target": "변화",
+        "weight": 0.527,
+        "count": 10
+      },
+      {
+        "source": "가정",
+        "target": "비닐",
+        "weight": 0.452,
+        "count": 7
+      },
+      {
+        "source": "가정",
+        "target": "음식",
+        "weight": 0.496,
+        "count": 8
+      },
+      {
+        "source": "가정",
+        "target": "아이",
+        "weight": 0.447,
+        "count": 6
+      },
+      {
+        "source": "마켓",
+        "target": "물품",
+        "weight": 0.577,
+        "count": 8
+      },
+      {
+        "source": "마켓",
+        "target": "사람",
+        "weight": 0.438,
+        "count": 7
+      },
+      {
+        "source": "마켓",
+        "target": "친환경",
+        "weight": 0.491,
+        "count": 9
+      },
+      {
+        "source": "사람",
+        "target": "프로그램",
+        "weight": 0.433,
+        "count": 6
+      },
+      {
+        "source": "친환경",
+        "target": "물품",
+        "weight": 0.504,
+        "count": 8
+      },
+      {
+        "source": "변화",
+        "target": "배달",
+        "weight": 0.589,
+        "count": 10
+      },
+      {
+        "source": "변화",
+        "target": "음식",
+        "weight": 0.458,
+        "count": 7
+      },
+      {
+        "source": "변화",
+        "target": "일회용품",
+        "weight": 0.4,
+        "count": 7
+      },
+      {
+        "source": "변화",
+        "target": "비닐",
+        "weight": 0.408,
+        "count": 6
+      },
+      {
+        "source": "변화",
+        "target": "제품",
+        "weight": 0.417,
+        "count": 5
+      },
+      {
+        "source": "개인",
+        "target": "참여",
+        "weight": 0.484,
+        "count": 8
+      },
+      {
+        "source": "생활",
+        "target": "일회용품",
+        "weight": 0.4,
+        "count": 7
+      },
+      {
+        "source": "보호",
+        "target": "가능",
+        "weight": 0.424,
+        "count": 7
+      },
+      {
+        "source": "음식",
+        "target": "배달",
+        "weight": 0.832,
+        "count": 12
+      },
+      {
+        "source": "음식",
+        "target": "일회용품",
+        "weight": 0.404,
+        "count": 6
+      },
+      {
+        "source": "음식",
+        "target": "비닐",
+        "weight": 0.48,
+        "count": 6
+      },
+      {
+        "source": "일회용품",
+        "target": "배달",
+        "weight": 0.485,
+        "count": 8
+      },
+      {
+        "source": "배달",
+        "target": "비닐",
+        "weight": 0.505,
+        "count": 7
+      },
+      {
+        "source": "구매",
+        "target": "제품",
+        "weight": 0.639,
+        "count": 7
+      },
+      {
+        "source": "구매",
+        "target": "물품",
+        "weight": 0.447,
+        "count": 6
+      },
+      {
+        "source": "구매",
+        "target": "습관",
+        "weight": 0.4,
+        "count": 6
+      },
+      {
+        "source": "물품",
+        "target": "프로그램",
+        "weight": 0.417,
+        "count": 5
+      },
+      {
+        "source": "물품",
+        "target": "활용",
+        "weight": 0.435,
+        "count": 5
+      }
+    ],
+    "centralWords": [
+      {
+        "word": "친환경소비행동",
+        "degree": 0.6154,
+        "betweenness": 0.1161,
+        "eigenvector": 0.3532,
+        "freq": 92
+      },
+      {
+        "word": "실천",
+        "degree": 0.5641,
+        "betweenness": 0.1235,
+        "eigenvector": 0.3535,
+        "freq": 162
+      },
+      {
+        "word": "사용",
+        "degree": 0.5385,
+        "betweenness": 0.1323,
+        "eigenvector": 0.2919,
+        "freq": 113
+      },
+      {
+        "word": "활동",
+        "degree": 0.5128,
+        "betweenness": 0.056,
+        "eigenvector": 0.3284,
+        "freq": 98
+      },
+      {
+        "word": "센터",
+        "degree": 0.3846,
+        "betweenness": 0.054,
+        "eigenvector": 0.2716,
+        "freq": 68
+      },
+      {
+        "word": "환경",
+        "degree": 0.3846,
+        "betweenness": 0.0688,
+        "eigenvector": 0.2751,
+        "freq": 54
+      },
+      {
+        "word": "종사자",
+        "degree": 0.3846,
+        "betweenness": 0.058,
+        "eigenvector": 0.2518,
+        "freq": 41
+      },
+      {
+        "word": "노력",
+        "degree": 0.3077,
+        "betweenness": 0.0607,
+        "eigenvector": 0.1569,
+        "freq": 47
+      },
+      {
+        "word": "교육",
+        "degree": 0.2821,
+        "betweenness": 0.0459,
+        "eigenvector": 0.2135,
+        "freq": 28
+      },
+      {
+        "word": "지속",
+        "degree": 0.2564,
+        "betweenness": 0.0081,
+        "eigenvector": 0.187,
+        "freq": 28
+      },
+      {
+        "word": "물건",
+        "degree": 0.2308,
+        "betweenness": 0.0378,
+        "eigenvector": 0.1312,
+        "freq": 58
+      },
+      {
+        "word": "가정",
+        "degree": 0.2308,
+        "betweenness": 0.0675,
+        "eigenvector": 0.0795,
+        "freq": 28
+      },
+      {
+        "word": "마켓",
+        "degree": 0.2308,
+        "betweenness": 0.0243,
+        "eigenvector": 0.1166,
+        "freq": 27
+      },
+      {
+        "word": "변화",
+        "degree": 0.2308,
+        "betweenness": 0.0661,
+        "eigenvector": 0.0937,
+        "freq": 24
+      },
+      {
+        "word": "필요",
+        "degree": 0.2051,
+        "betweenness": 0.0027,
+        "eigenvector": 0.1458,
+        "freq": 47
+      }
+    ],
+    "communityCount": 3
+  }
+}

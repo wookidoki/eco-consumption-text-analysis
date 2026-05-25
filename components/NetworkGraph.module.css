@@ -1,0 +1,61 @@
+.wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 12px;
+}
+
+.canvas {
+  width: 100%;
+  background: radial-gradient(circle at 50% 40%, #f3f8f4, #ffffff 70%);
+  border-radius: 10px;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.node {
+  cursor: pointer;
+}
+
+.label {
+  fill: var(--text);
+  font-weight: 700;
+  pointer-events: none;
+  paint-order: stroke;
+  stroke: #fff;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 24px;
+  padding: 12px 10px 6px;
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legendDot {
+  display: inline-block;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.legendHint {
+  flex-basis: 100%;
+  font-size: 0.8rem;
+  color: var(--faint);
+}

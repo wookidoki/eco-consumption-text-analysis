@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# 인터뷰 원자료 (개인정보 보호 - 공개 저장소에서 제외)
+/analysis/data/*.txt
+/analysis/data/*.docx
+/analysis/output/
+/analysis/_summary.txt
