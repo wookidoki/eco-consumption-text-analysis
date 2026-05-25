@@ -44,6 +44,6 @@ next-env.d.ts
 /analysis/data/*.txt
 /analysis/data/*.docx
 /analysis/output/
-/analysis/_summary.txt
+/analysis/_*.txt
 
 .vercel
