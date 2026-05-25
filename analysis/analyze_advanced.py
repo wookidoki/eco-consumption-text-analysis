@@ -631,6 +631,7 @@ def run_factors(rows, kiwi):
 
     def collect(groups, guard=False):
         res = []
+        used_text = set()  # 테마 간 동일 예문 중복 노출 방지
         for theme, cues in groups:
             seen, exs = set(), []
             cnt = 0
@@ -641,13 +642,16 @@ def run_factors(rows, kiwi):
                         continue
                     cnt += 1
                     cand.append(s)
-            # 대표 예문: 너무 길지 않은 것 우선, 응답자 중복 제거
-            cand.sort(key=lambda s: len(s["text"]))
+            # 대표 예문: 주제 단서를 많이 담은(on-theme) 문장 우선, 그다음 간결한 것
+            def cue_hits(s):
+                return sum(1 for c in cues if c in s["text"])
+            cand.sort(key=lambda s: (-cue_hits(s), len(s["text"])))
             for s in cand:
-                if s["r"] in seen:
+                if s["r"] in seen or s["text"] in used_text:
                     continue
                 if 18 <= len(s["text"]) <= 130:
                     seen.add(s["r"])
+                    used_text.add(s["text"])
                     exs.append({"r": s["r"], "q": s["q"], "text": s["text"]})
                 if len(exs) >= 3:
                     break
