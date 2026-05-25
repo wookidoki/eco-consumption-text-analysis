@@ -452,6 +452,74 @@ def run_features(rows, tokens_by_row, report, emb, labels):
 
 
 # =============================================================================
+# 6c. 문장 단위 분석 — KWIC(키워드 실제 문장) + SBERT TextRank 중요도
+# =============================================================================
+FOCUS_WORDS = [
+    "배달", "함께", "혼자", "텀블러", "마켓", "일회용품", "분리배출", "분리수거",
+    "가족", "아이", "교육", "워크숍", "워크샵", "팀빌딩", "다짐", "꾸준히",
+    "개인컵", "장바구니", "종사자", "물티슈", "손수건", "당근마켓", "음식",
+    "비닐", "플라스틱", "습관", "정책제안", "도시락",
+]
+
+
+def run_sentences(rows, kiwi):
+    """응답을 문장으로 분해해 SBERT TextRank로 '대표성 중요도'를 매기고,
+    키워드가 실제로 쓰인 문장을 중요도순으로 인덱싱(KWIC)한다."""
+    sents = []
+    for r in rows:
+        for s in kiwi.split_into_sents(r["text"]):
+            txt = getattr(s, "text", str(s)).strip()
+            if len(txt.replace(" ", "")) < 10:
+                continue
+            sents.append({"respondent": r["respondent"], "question": r["question"], "text": txt})
+
+    method = "SBERT TextRank (jhgan/ko-sroberta-multitask)"
+    try:
+        from sentence_transformers import SentenceTransformer
+        model = SentenceTransformer("jhgan/ko-sroberta-multitask")
+        emb = model.encode([s["text"] for s in sents], normalize_embeddings=True, show_progress_bar=False)
+    except Exception as e:
+        print("[문장 SBERT 실패 → TF-IDF 폴백]", e)
+        from sklearn.decomposition import TruncatedSVD
+        toks = [" ".join(extract_terms(kiwi, s["text"])) for s in sents]
+        X = TfidfVectorizer().fit_transform(toks)
+        emb = TruncatedSVD(n_components=64, random_state=42).fit_transform(X)
+        emb = emb / (np.linalg.norm(emb, axis=1, keepdims=True) + 1e-9)
+        method = "TF-IDF TextRank (SBERT 폴백)"
+
+    sim = cosine_similarity(emb)
+    np.fill_diagonal(sim, 0.0)
+    sim[sim < 0.2] = 0.0  # 약한 유사도 제거(중심성 변별)
+    G = nx.from_numpy_array(sim)
+    pr = nx.pagerank(G, weight="weight")
+    sc = np.array([pr[i] for i in range(len(sents))])
+    imp = (sc - sc.min()) / (sc.max() - sc.min()) * 100 if sc.max() > sc.min() else np.full(len(sc), 50.0)
+    for i, s in enumerate(sents):
+        s["importance"] = round(float(imp[i]), 1)
+
+    def pack(lst):
+        return [{"respondent": m["respondent"], "question": m["question"],
+                 "importance": m["importance"], "text": m["text"]} for m in lst]
+
+    by_kw, counts = {}, []
+    for w in FOCUS_WORDS:
+        matched = [s for s in sents if w in s["text"]]
+        if len(matched) < 2:
+            continue
+        matched.sort(key=lambda x: -x["importance"])
+        by_kw[w] = pack(matched[:8])
+        counts.append({"word": w, "count": len(matched),
+                       "meanImportance": round(float(np.mean([m["importance"] for m in matched])), 1)})
+    counts.sort(key=lambda x: -x["count"])
+    top_overall = pack(sorted(sents, key=lambda x: -x["importance"])[:8])
+
+    return {
+        "method": method, "totalSentences": len(sents),
+        "keywords": counts, "byKeyword": by_kw, "topOverall": top_overall,
+    }
+
+
+# =============================================================================
 # 7. 전처리/데이터 예시 카드
 # =============================================================================
 def run_preprocessing(rows, kiwi):
@@ -494,6 +562,8 @@ def main():
     report["embedding"], emb, labels = run_embeddings(rows, tokens_by_row)
     print("· 파생변수 상관/회귀/매개")
     report["features"] = run_features(rows, tokens_by_row, report, emb, labels)
+    print("· 문장 단위 KWIC / 중요도")
+    report["sentences"] = run_sentences(rows, kiwi)
     print("· 전처리 카드")
     report["preprocessing"] = run_preprocessing(rows, kiwi)
 

@@ -104,6 +104,25 @@ export interface Report {
     chart: string;
     caveat: string;
   };
+  sentences: {
+    method: string;
+    totalSentences: number;
+    keywords: { word: string; count: number; meanImportance: number }[];
+    byKeyword: {
+      [w: string]: {
+        respondent: string;
+        question: string;
+        importance: number;
+        text: string;
+      }[];
+    };
+    topOverall: {
+      respondent: string;
+      question: string;
+      importance: number;
+      text: string;
+    }[];
+  };
   preprocessing: {
     rawExample: { label: string; text: string };
     pipeline: string[];

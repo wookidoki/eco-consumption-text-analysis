@@ -9,6 +9,7 @@ import Eda from "@/components/Eda";
 import Adequacy from "@/components/Adequacy";
 import Keywords from "@/components/Keywords";
 import Keyness from "@/components/Keyness";
+import SentenceLevel from "@/components/SentenceLevel";
 import Tfidf from "@/components/Tfidf";
 import CentralWords from "@/components/CentralWords";
 import NetworkGraph from "@/components/NetworkGraph";
@@ -77,8 +78,17 @@ export default function Home() {
         </Section>
 
         <Section
-          id="sec-network"
+          id="sec-sentences"
           index={6}
+          title="문장 단위 근거 (KWIC · 문장 중요도)"
+          subtitle="키워드가 실제 쓰인 문장과 그 문장의 대표성 중요도(SBERT TextRank)를 함께 봅니다."
+        >
+          <SentenceLevel sentences={r.sentences} />
+        </Section>
+
+        <Section
+          id="sec-network"
+          index={7}
           title="주요 중심언어 & 의미연결망"
           subtitle="단어 동시출현 망에서 연결중심성이 높은 핵심어를 도출합니다."
         >
@@ -89,7 +99,7 @@ export default function Home() {
 
         <Section
           id="sec-themes"
-          index={7}
+          index={8}
           title="실천 확산 3단계 (주제 군집)"
           subtitle="의미연결망 군집을 해석해 도출한 핵심 주제와 그 연결 흐름입니다."
         >
@@ -98,7 +108,7 @@ export default function Home() {
 
         <Section
           id="sec-ca"
-          index={8}
+          index={9}
           title="대응분석 (Correspondence Analysis)"
           subtitle="질문과 단어를 2차원 평면에 배치해 질문별 어휘 구조를 시각화합니다."
         >
