@@ -104,6 +104,19 @@ export interface Report {
     chart: string;
     caveat: string;
   };
+  factors: {
+    method: string;
+    facilitators: {
+      theme: string;
+      count: number;
+      examples: { r: string; q: string; text: string }[];
+    }[];
+    barriers: {
+      theme: string;
+      count: number;
+      examples: { r: string; q: string; text: string }[];
+    }[];
+  };
   direction: {
     method: string;
     behaviors: {

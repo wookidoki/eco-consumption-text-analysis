@@ -8,6 +8,27 @@
   padding: 0 24px 80px;
 }
 
+.part {
+  margin-top: 60px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--primary);
+}
+.part:first-of-type {
+  margin-top: 40px;
+}
+.partLabel {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+}
+.partTitle {
+  font-size: 1.7rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
 .appendixDivider {
   margin-top: 64px;
   padding: 22px 24px;

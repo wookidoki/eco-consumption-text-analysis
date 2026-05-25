@@ -2,24 +2,35 @@ import styles from "./page.module.css";
 import { report } from "@/lib/report";
 import Hero from "@/components/Hero";
 import KeyFindings from "@/components/KeyFindings";
+import Notice from "@/components/Notice";
 import Toc from "@/components/Toc";
 import Section from "@/components/Section";
-import Preprocessing from "@/components/Preprocessing";
-import Eda from "@/components/Eda";
-import Adequacy from "@/components/Adequacy";
 import Keywords from "@/components/Keywords";
 import Keyness from "@/components/Keyness";
-import BehaviorDirection from "@/components/BehaviorDirection";
-import SentenceLevel from "@/components/SentenceLevel";
 import Tfidf from "@/components/Tfidf";
 import CentralWords from "@/components/CentralWords";
 import NetworkGraph from "@/components/NetworkGraph";
 import NetworkMetrics from "@/components/NetworkMetrics";
+import BehaviorDirection from "@/components/BehaviorDirection";
+import SentenceLevel from "@/components/SentenceLevel";
+import Factors from "@/components/Factors";
 import Themes from "@/components/Themes";
+import Preprocessing from "@/components/Preprocessing";
+import Eda from "@/components/Eda";
+import Adequacy from "@/components/Adequacy";
 import Ca from "@/components/Ca";
 import Clustering from "@/components/Clustering";
 import Features from "@/components/Features";
 import Methodology from "@/components/Methodology";
+
+function Part({ label, title }: { label: string; title: string }) {
+  return (
+    <div className={styles.part}>
+      <span className={styles.partLabel}>{label}</span>
+      <h2 className={styles.partTitle}>{title}</h2>
+    </div>
+  );
+}
 
 export default function Home() {
   const r = report;
@@ -30,38 +41,14 @@ export default function Home() {
 
       <div className={styles.container}>
         <KeyFindings r={r} />
+        <Notice />
         <Toc />
 
-        <Section
-          id="sec-pre"
-          index={1}
-          title="데이터 & 전처리"
-          subtitle="어떤 데이터를 어떻게 정제했는지 — 원자료 예시, 형태소 분석, 불용어 처리."
-        >
-          <Preprocessing pre={r.preprocessing} />
-        </Section>
-
-        <Section
-          id="sec-eda"
-          index={2}
-          title="탐색적 데이터 분석 (EDA)"
-          subtitle="응답 길이 분포·어휘 다양성·질문 간 차이 검정으로 데이터의 형태를 파악합니다."
-        >
-          <Eda eda={r.eda} />
-        </Section>
-
-        <Section
-          id="sec-adequacy"
-          index={3}
-          title="데이터 분량 적정성 진단"
-          subtitle="“글이 너무 작지는 않은지” — 분석에 충분한 분량인지 판정합니다."
-        >
-          <Adequacy adequacy={r.adequacy} />
-        </Section>
+        <Part label="PART A" title="핵심어 분석 — 주요 중심언어" />
 
         <Section
           id="sec-keywords"
-          index={4}
+          index={1}
           title="핵심 키워드 빈도"
           subtitle="전체 응답과 질문별로 가장 자주 언급된 단어입니다."
         >
@@ -70,7 +57,7 @@ export default function Home() {
 
         <Section
           id="sec-keyness"
-          index={5}
+          index={2}
           title="질문별 변별어 (Keyness · TF-IDF)"
           subtitle="단순 빈도를 넘어, 각 질문에서 통계적으로 두드러진 단어를 도출합니다."
         >
@@ -79,56 +66,90 @@ export default function Home() {
         </Section>
 
         <Section
-          id="sec-sentences"
-          index={6}
-          title="문장 수준 분석 — 단어가 ‘어떤 의미·방향’으로 쓰였나"
-          subtitle="빈도가 못 잡는 행동의 증가/감소 방향을 코딩하고, 키워드가 실제 쓰인 문장(KWIC)과 그 문장의 중요도(SBERT TextRank)를 제시합니다."
-        >
-          <BehaviorDirection direction={r.direction} />
-          <SentenceLevel sentences={r.sentences} />
-        </Section>
-
-        <Section
           id="sec-network"
-          index={7}
+          index={3}
           title="주요 중심언어 & 의미연결망"
-          subtitle="단어 동시출현 망에서 연결중심성이 높은 핵심어를 도출합니다."
+          subtitle="단어 동시출현 망의 중심성으로 핵심어를 도출합니다. ‘주제어 제외’ 토글로 자명어 너머의 잠재 구조(종사자·센터·함께)를 확인하세요."
         >
           <NetworkMetrics m={r.networkMetrics} />
           <CentralWords central={r.network.centralWords} />
           <NetworkGraph network={r.network} networkLatent={r.networkLatent} />
         </Section>
 
+        <Part label="PART B" title="해석 — 무엇이 어떻게 바뀌었나" />
+
+        <Section
+          id="sec-direction"
+          index={4}
+          title="행동 변화 방향 & 문장 근거"
+          subtitle="빈도가 못 잡는 ‘증가/감소’ 방향을 코딩하고, 키워드가 실제 쓰인 문장(KWIC)과 문장 중요도(SBERT TextRank)를 제시합니다."
+        >
+          <BehaviorDirection direction={r.direction} />
+          <SentenceLevel sentences={r.sentences} />
+        </Section>
+
+        <Section
+          id="sec-factors"
+          index={5}
+          title="촉진요인 ↔ 장벽요인"
+          subtitle="무엇이 실천을 가능케 했고(촉진) 무엇이 가로막았는지(장벽)를 주제별로 분석합니다."
+        >
+          <Factors factors={r.factors} />
+        </Section>
+
         <Section
           id="sec-themes"
-          index={8}
+          index={6}
           title="실천 확산 3단계 (주제 군집)"
           subtitle="의미연결망 군집을 해석해 도출한 핵심 주제와 그 연결 흐름입니다."
         >
           <Themes themes={r.themes} />
         </Section>
 
+        <Part label="PART C" title="데이터 점검" />
+
+        <Section
+          id="sec-pre"
+          index={7}
+          title="데이터 & 전처리"
+          subtitle="어떤 데이터를 어떻게 정제했는지 — 원자료 예시, 형태소 분석, 불용어 처리."
+        >
+          <Preprocessing pre={r.preprocessing} />
+        </Section>
+
+        <Section
+          id="sec-eda"
+          index={8}
+          title="탐색적 데이터 분석(EDA) & 분량 적정성"
+          subtitle="응답 길이 분포·어휘 다양성·질문 간 차이 검정과 분석 충분성 판정입니다."
+        >
+          <Eda eda={r.eda} />
+          <Adequacy adequacy={r.adequacy} />
+        </Section>
+
+        <div className={styles.appendixDivider}>
+          <h3>방법론 부록 · 참고용</h3>
+          <p>
+            아래는 다양한 분석 기법을 시연한 결과입니다. 소표본(n=20)에서는 결정적 발견으로
+            보기 어려워 본문과 분리했습니다 — 방법의 적용 가능성과 한계를 함께 보여주는 참고
+            자료입니다.
+          </p>
+        </div>
+
         <Section
           id="sec-ca"
-          index={9}
+          index="A"
+          tag="참고용"
+          tone="appendix"
           title="대응분석 (Correspondence Analysis)"
           subtitle="질문과 단어를 2차원 평면에 배치해 질문별 어휘 구조를 시각화합니다."
         >
           <Ca ca={r.ca} />
         </Section>
 
-        <div className={styles.appendixDivider}>
-          <h3>방법론 부록 · 참고용</h3>
-          <p>
-            아래는 다양한 분석 기법을 시연한 결과입니다. 응답자 20명(소표본)에서는 결정적
-            발견으로 보기 어려워 본문과 분리했습니다 — 방법의 적용 가능성과 한계를 함께
-            보여주는 참고 자료입니다.
-          </p>
-        </div>
-
         <Section
           id="sec-cluster"
-          index="A"
+          index="B"
           tag="참고용"
           tone="appendix"
           title="응답 의미 군집 (SBERT 임베딩)"
@@ -139,7 +160,7 @@ export default function Home() {
 
         <Section
           id="sec-features"
-          index="B"
+          index="C"
           tag="참고용"
           tone="appendix"
           title="파생변수 상관 · 회귀 · 매개분석"

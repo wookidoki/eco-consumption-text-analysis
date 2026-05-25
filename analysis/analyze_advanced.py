@@ -601,6 +601,72 @@ def run_behavior_direction(rows, kiwi):
 
 
 # =============================================================================
+# 6e. 촉진요인 ↔ 장벽요인 분석 (행동변화 연구의 핵심 축)
+#     '무엇이 실천을 가능케 했고(촉진), 무엇이 가로막았나(장벽)'
+# =============================================================================
+FACILITATORS = [
+    ("함께·공동 실천", ["함께", "종사자들", "동료", "서로", "같이", "공동체"]),
+    ("교육·필요성 이해", ["교육", "강의", "박사", "근거", "필요성", "이해하게", "왜 실천", "왜 해야"]),
+    ("습관화·반복", ["습관", "자연스러", "자연스럽", "반복", "꾸준", "익숙"]),
+    ("조직 문화·약속", ["독려", "모델링", "자극", "책임감", "실천계획", "게시", "약속", "분위기"]),
+]
+BARRIERS = [
+    ("초기 막연함·의무감", ["막연", "의무감", "어디서부터", "갈피", "보여주기"]),
+    ("어려움·낯섦", ["어렵", "낯설", "의문", "잘 알지 못", "잘 모르", "어려워"]),
+    ("귀찮음·번거로움·불편", ["귀찮", "번거", "불편", "부담"]),
+    ("걱정·부족함·망설임", ["걱정", "부족", "망설", "힘들"]),
+]
+NEG_GUARD = ["어렵지 않", "어렵기만 한 것은 아니", "부담스럽지 않", "번거롭지 않",
+             "힘들지 않", "어렵기만 한 게 아니", "어렵지만은"]
+
+
+def run_factors(rows, kiwi):
+    sents = []
+    for r in rows:
+        for s in kiwi.split_into_sents(r["text"]):
+            t = getattr(s, "text", str(s)).strip()
+            if len(t.replace(" ", "")) < 12:
+                continue
+            sents.append({"r": r["respondent"], "q": r["question"], "text": t})
+
+    def collect(groups, guard=False):
+        res = []
+        for theme, cues in groups:
+            seen, exs = set(), []
+            cnt = 0
+            cand = []
+            for s in sents:
+                if any(c in s["text"] for c in cues):
+                    if guard and any(g in s["text"] for g in NEG_GUARD):
+                        continue
+                    cnt += 1
+                    cand.append(s)
+            # 대표 예문: 너무 길지 않은 것 우선, 응답자 중복 제거
+            cand.sort(key=lambda s: len(s["text"]))
+            for s in cand:
+                if s["r"] in seen:
+                    continue
+                if 18 <= len(s["text"]) <= 130:
+                    seen.add(s["r"])
+                    exs.append({"r": s["r"], "q": s["q"], "text": s["text"]})
+                if len(exs) >= 3:
+                    break
+            if not exs and cand:  # 길이 조건 못 맞추면 가장 짧은 것
+                s = cand[0]
+                exs = [{"r": s["r"], "q": s["q"], "text": s["text"][:130]}]
+            if cnt >= 2:
+                res.append({"theme": theme, "count": cnt, "examples": exs})
+        res.sort(key=lambda x: -x["count"])
+        return res
+
+    return {
+        "method": "질적 내용분석 — 촉진/장벽 단서어로 문장 수집 후 주제별 정리(근거 문장 제시)",
+        "facilitators": collect(FACILITATORS),
+        "barriers": collect(BARRIERS, guard=True),
+    }
+
+
+# =============================================================================
 # 7. 전처리/데이터 예시 카드
 # =============================================================================
 def run_preprocessing(rows, kiwi):
@@ -647,6 +713,8 @@ def main():
     report["sentences"] = run_sentences(rows, kiwi)
     print("· 행동 변화 방향(증가/감소) 분석")
     report["direction"] = run_behavior_direction(rows, kiwi)
+    print("· 촉진요인 ↔ 장벽요인 분석")
+    report["factors"] = run_factors(rows, kiwi)
     print("· 전처리 카드")
     report["preprocessing"] = run_preprocessing(rows, kiwi)
 
