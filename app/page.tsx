@@ -92,24 +92,37 @@ export default function Home() {
           <Ca ca={r.ca} />
         </Section>
 
+        <div className={styles.appendixDivider}>
+          <h3>방법론 부록 · 참고용</h3>
+          <p>
+            아래는 다양한 분석 기법을 시연한 결과입니다. 응답자 20명(소표본)에서는 결정적
+            발견으로 보기 어려워 본문과 분리했습니다 — 방법의 적용 가능성과 한계를 함께
+            보여주는 참고 자료입니다.
+          </p>
+        </div>
+
         <Section
-          index={9}
+          index="A"
+          tag="참고용"
+          tone="appendix"
           title="응답 의미 군집 (SBERT 임베딩)"
-          subtitle="딥러닝 문장 임베딩으로 응답을 의미 기준으로 묶고 유사도를 분석합니다."
+          subtitle="딥러닝 문장 임베딩으로 응답을 군집화 — 실루엣이 낮아(주제가 유사) 강한 군집 구조는 아님."
         >
           <Clustering emb={r.embedding} />
         </Section>
 
         <Section
-          index={10}
+          index="B"
+          tag="참고용"
+          tone="appendix"
           title="파생변수 상관 · 회귀 · 매개분석"
-          subtitle="응답자별 수치 변수를 만들어 다변량 통계를 시연합니다 (탐색적, n=20)."
+          subtitle="응답자별 수치 변수로 다변량 통계를 시연 — n=20에선 비유의(방법 시연·한계 확인용)."
         >
           <Features features={r.features} />
         </Section>
 
         <Section
-          index={11}
+          index="📖"
           title="분석 방법론 & 수치 해석 가이드"
           subtitle="각 분석이 무엇이며 화면의 수치를 어떻게 읽는지 정리했습니다."
         >

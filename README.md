@@ -9,10 +9,16 @@
 
 | 구분 | 내용 |
 |---|---|
+| **데이터 & 전처리** | 원자료 예시, 형태소 분석, 불용어/사용자사전 처리 |
+| **EDA** | 응답 길이 boxplot·기술통계, 어휘다양성(TTR), Kruskal–Wallis 검정 |
 | **분량 적정성 진단** | 응답자·질문별 글자/어절/문장 수, 분석 충분성 판정 |
-| **중심언어 도출** | 단어 동시출현 의미연결망 → 연결·매개·위세 중심성 상위어 |
 | **핵심 키워드** | 전체 및 질문별 출현 빈도 상위 단어 |
-| **질문별 변별 키워드** | TF-IDF 기반 각 질문의 특징어 |
+| **질문별 변별어** | Keyness(로그우도) + TF-IDF |
+| **중심언어 도출** | 의미연결망 연결·매개·위세 중심성 + 네트워크 지표(밀도·모듈성) |
+| **실천 확산 3단계** | 의미연결망 군집 테마 (직장→가정→소비) |
+| **대응분석(CA)** | 질문×단어 2차원 포지셔닝 biplot |
+| **의미 군집(SBERT)** | 딥러닝 문장임베딩 군집(실루엣)·유사도·덴드로그램 |
+| **상관·회귀·매개** | 응답자 파생변수 다변량 통계 (탐색적, n=20) |
 
 ### 질문 구성
 - **Q1.** 친환경소비행동 활동에 대한 전반적 느낀점
@@ -29,17 +35,19 @@
 
 ## 기술 스택
 
-- **분석**: Python · Kiwi(kiwipiepy) 형태소 분석 · scikit-learn(TF-IDF) · NetworkX(중심성·레이아웃)
-- **웹**: Next.js 16 (App Router, TypeScript) · CSS Modules · 의존성 없는 SVG 네트워크 시각화
+- **기본 분석**: Python · Kiwi(kiwipiepy) 형태소 분석 · scikit-learn(TF-IDF) · NetworkX(중심성·레이아웃)
+- **고급 분석**: scipy(Kruskal·CA) · statsmodels(회귀·매개) · sentence-transformers/torch(SBERT) · matplotlib/seaborn(차트)
+- **웹**: Next.js 16 (App Router, TypeScript) · CSS Modules · 인터랙티브 SVG 네트워크 + 정적 통계 차트(PNG)
 - **배포**: Vercel
 
 ## 실행 방법
 
-### 1) 텍스트 분석 (결과 JSON 생성)
+### 1) 텍스트 분석 (결과 JSON + 차트 생성)
 ```bash
 cd analysis
 pip install -r requirements.txt
-python analyze.py        # -> ../public/data/report.json 생성
+python analyze.py            # 기본: 키워드/TF-IDF/의미연결망 -> ../public/data/report.json
+python analyze_advanced.py   # 고급: EDA/Keyness/CA/SBERT/회귀·매개 + ../public/charts/*.png
 ```
 
 ### 2) 웹 대시보드

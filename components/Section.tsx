@@ -4,19 +4,28 @@ export default function Section({
   index,
   title,
   subtitle,
+  tag,
+  tone,
   children,
 }: {
-  index: number;
+  index: number | string;
   title: string;
   subtitle?: string;
+  tag?: string;
+  tone?: "appendix";
   children: React.ReactNode;
 }) {
   return (
-    <section className={styles.section}>
+    <section className={`${styles.section} ${tone === "appendix" ? styles.appendix : ""}`}>
       <header className={styles.head}>
-        <span className={styles.badge}>{index}</span>
+        <span className={`${styles.badge} ${tone === "appendix" ? styles.badgeMuted : ""}`}>
+          {index}
+        </span>
         <div>
-          <h2 className={styles.title}>{title}</h2>
+          <h2 className={styles.title}>
+            {title}
+            {tag && <span className={styles.tag}>{tag}</span>}
+          </h2>
           {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
         </div>
       </header>
