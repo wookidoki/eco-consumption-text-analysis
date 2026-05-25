@@ -104,6 +104,16 @@ export interface Report {
     chart: string;
     caveat: string;
   };
+  direction: {
+    method: string;
+    behaviors: {
+      word: string;
+      total: number;
+      direction: string;
+      arrow: string;
+      examples: { r: string; q: string; text: string }[];
+    }[];
+  };
   sentences: {
     method: string;
     totalSentences: number;

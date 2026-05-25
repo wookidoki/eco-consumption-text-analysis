@@ -520,6 +520,87 @@ def run_sentences(rows, kiwi):
 
 
 # =============================================================================
+# 6d. 행동 변화 '방향' 분석 — 키워드가 줄었나(↓) 늘었나/채택(↑)
+#     빈도·네트워크가 못 잡는 '증가/감소'를 문장 술어 단서로 분류
+# =============================================================================
+BEHAVIOR_WORDS = [
+    "배달", "일회용품", "텀블러", "개인컵", "장바구니", "물티슈", "손수건",
+    "분리배출", "분리수거", "도시락", "비닐", "종이컵", "당근마켓",
+]
+REDUCE_CUES = ["줄이", "줄였", "줄여", "줄게", "줄도록", "줄임", "자제", "지양", "감소",
+               "안 받", "받지 않", "안 쓰", "쓰지 않", "사용하지 않", "사용 안", "안 시키",
+               "않기", "말기", "덜 ", "아끼", "절약", "절감", "끄기", "끄고", "뽑", "최소화"]
+ADOPT_CUES = ["사용하", "사용합", "사용해", "사용한", "사용을", "사용 하", "사용했", "챙기", "챙겨",
+              "지참", "들고 다", "가지고 다", "가져", "활용", "재사용", "마련", "준비", "증가",
+              "늘었", "늘리", "늘어", "담아", "쓰고", "씁니", "시작"]
+
+
+def run_behavior_direction(rows, kiwi):
+    sents = []
+    for r in rows:
+        for s in kiwi.split_into_sents(r["text"]):
+            sents.append({"r": r["respondent"], "q": r["question"],
+                          "text": getattr(s, "text", str(s)).strip()})
+
+    def classify(text, kw):
+        idx = text.find(kw)
+        before = text[max(0, idx - 7):idx]
+        rest = text[idx + len(kw):]
+        # 키워드가 속한 '절'만 보도록 구분자에서 자른다(긴 나열 문장 오분류 방지)
+        cut = len(rest)
+        for d in [",", ".", "/", "·", "\n", "(", ")", "。", "、"]:
+            p = rest.find(d)
+            if p != -1:
+                cut = min(cut, p)
+        after = rest[:cut]
+        # 'A 대신 B' 대체 표현 처리
+        if "대신" in after[:6]:
+            return "reduce"   # 'keyword 대신 ~' → keyword를 줄임/회피
+        if "대신" in before:
+            return "adopt"    # '~ 대신 keyword' → keyword 채택
+        if any(c in after for c in REDUCE_CUES):
+            return "reduce"
+        if any(c in after for c in ADOPT_CUES):
+            return "adopt"
+        # 절에 단서가 없으면 문장 전체로 보조 판정(둘 중 하나만 있을 때만)
+        rt = any(c in text for c in REDUCE_CUES)
+        at = any(c in text for c in ADOPT_CUES)
+        if rt and not at:
+            return "reduce"
+        if at and not rt:
+            return "adopt"
+        return "neutral"
+
+    # 방향은 원문 정독 기반 질적 코딩으로 확정(규칙기반은 뉘앙스 오분류가 있어 보조로만 사용)
+    VERIFIED_DIR = {
+        "배달": "감소·회피", "일회용품": "감소·회피", "물티슈": "감소·회피",
+        "비닐": "감소·회피", "종이컵": "감소·회피",
+        "텀블러": "채택·증가", "개인컵": "채택·증가", "장바구니": "채택·증가",
+        "손수건": "채택·증가", "도시락": "채택·증가",
+        "분리배출": "강화·증가", "분리수거": "강화·증가", "당근마켓": "활용·증가",
+    }
+
+    out = []
+    for w in BEHAVIOR_WORDS:
+        hits = [s for s in sents if w in s["text"]]
+        if len(hits) < 3 or w not in VERIFIED_DIR:
+            continue
+        direction = VERIFIED_DIR[w]
+        arrow = "↓" if direction.startswith(("감소", "회피")) else "↑"
+        want = "reduce" if arrow == "↓" else "adopt"
+        # 방향과 일치하는(=자동분류가 같은) 문장을 근거 예문으로, 짧은 것 우선
+        matched = [s for s in hits if classify(s["text"], w) == want]
+        matched.sort(key=lambda s: len(s["text"]))
+        picks = (matched or sorted(hits, key=lambda s: len(s["text"])))[:2]
+        out.append({
+            "word": w, "total": len(hits), "direction": direction, "arrow": arrow,
+            "examples": [{"r": s["r"], "q": s["q"], "text": s["text"][:140]} for s in picks],
+        })
+    out.sort(key=lambda x: -x["total"])
+    return {"method": "질적 방향 코딩(응답 문장 정독) + 근거 문장 제시", "behaviors": out}
+
+
+# =============================================================================
 # 7. 전처리/데이터 예시 카드
 # =============================================================================
 def run_preprocessing(rows, kiwi):
@@ -564,6 +645,8 @@ def main():
     report["features"] = run_features(rows, tokens_by_row, report, emb, labels)
     print("· 문장 단위 KWIC / 중요도")
     report["sentences"] = run_sentences(rows, kiwi)
+    print("· 행동 변화 방향(증가/감소) 분석")
+    report["direction"] = run_behavior_direction(rows, kiwi)
     print("· 전처리 카드")
     report["preprocessing"] = run_preprocessing(rows, kiwi)
 

@@ -9,6 +9,7 @@ import Eda from "@/components/Eda";
 import Adequacy from "@/components/Adequacy";
 import Keywords from "@/components/Keywords";
 import Keyness from "@/components/Keyness";
+import BehaviorDirection from "@/components/BehaviorDirection";
 import SentenceLevel from "@/components/SentenceLevel";
 import Tfidf from "@/components/Tfidf";
 import CentralWords from "@/components/CentralWords";
@@ -80,9 +81,10 @@ export default function Home() {
         <Section
           id="sec-sentences"
           index={6}
-          title="문장 단위 근거 (KWIC · 문장 중요도)"
-          subtitle="키워드가 실제 쓰인 문장과 그 문장의 대표성 중요도(SBERT TextRank)를 함께 봅니다."
+          title="문장 수준 분석 — 단어가 ‘어떤 의미·방향’으로 쓰였나"
+          subtitle="빈도가 못 잡는 행동의 증가/감소 방향을 코딩하고, 키워드가 실제 쓰인 문장(KWIC)과 그 문장의 중요도(SBERT TextRank)를 제시합니다."
         >
+          <BehaviorDirection direction={r.direction} />
           <SentenceLevel sentences={r.sentences} />
         </Section>
 

@@ -7,7 +7,7 @@ const ITEMS = [
   { id: "sec-adequacy", label: "3. 분량 적정성" },
   { id: "sec-keywords", label: "4. 핵심 키워드" },
   { id: "sec-keyness", label: "5. 질문별 변별어" },
-  { id: "sec-sentences", label: "6. 문장 단위 근거" },
+  { id: "sec-sentences", label: "6. 문장 수준 분석" },
   { id: "sec-network", label: "7. 중심언어·연결망" },
   { id: "sec-themes", label: "8. 실천 확산 3단계" },
   { id: "sec-ca", label: "9. 대응분석(CA)" },

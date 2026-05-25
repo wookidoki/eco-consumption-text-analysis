@@ -1,0 +1,144 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.intro {
+  font-size: 0.92rem;
+  color: var(--muted);
+  background: var(--surface-2);
+  border-radius: 10px;
+  padding: 14px 18px;
+  line-height: 1.6;
+}
+.intro b {
+  color: var(--primary-dark);
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.group {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px 20px;
+  border-top: 4px solid var(--faint);
+}
+.group.down {
+  border-top-color: var(--low);
+}
+.group.up {
+  border-top-color: var(--ok);
+}
+
+.groupHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.arrow {
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #fff;
+}
+.down .arrow {
+  background: var(--low);
+}
+.up .arrow {
+  background: var(--ok);
+}
+.groupTitle {
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--text);
+}
+.groupDesc {
+  font-size: 0.8rem;
+  color: var(--faint);
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.item {
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--border);
+}
+.item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.itemHead {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.word {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text);
+}
+.dir {
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 5px;
+}
+.down .dir {
+  background: #fbe9ec;
+  color: #b03651;
+}
+.up .dir {
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+}
+.count {
+  margin-left: auto;
+  font-size: 0.76rem;
+  color: var(--faint);
+  white-space: nowrap;
+}
+
+.ex {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.exTag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-right: 6px;
+}
+
+.method {
+  font-size: 0.8rem;
+  color: var(--faint);
+}
+
+@media (max-width: 820px) {
+  .cols {
+    grid-template-columns: 1fr;
+  }
+}
