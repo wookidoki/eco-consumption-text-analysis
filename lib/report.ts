@@ -56,6 +56,63 @@ export interface Report {
     words: string[];
     lead: string;
   }[];
+  eda: {
+    descByQuestion: {
+      question: string; label: string; n: number; mean: number; std: number;
+      min: number; q1: number; median: number; q3: number; max: number; cv: number;
+    }[];
+    lexical: { question: string; tokens: number; types: number; ttr: number; hapaxRatio: number }[];
+    kruskal: { statistic: number; pvalue: number; df: number; eta2: number; sig: string };
+    overall: { responses: number; meanChars: number; medianChars: number; stdChars: number };
+    charts: { boxplot: string; ttr: string };
+  };
+  keyness: {
+    byQuestion: { [q: string]: { word: string; ll: number; freq: number; sig: string }[] };
+    chart: string;
+  };
+  networkMetrics: {
+    nodes: number; edges: number; density: number; avgDegree: number;
+    modularity: number; transitivity: number; components: number;
+  };
+  ca: {
+    explained: number[];
+    questionCoords: { q: string; x: number; y: number }[];
+    chart: string;
+  };
+  embedding: {
+    method: string; k: number; silhouette: number;
+    clusters: {
+      id: number; size: number; topTerms: string[];
+      exemplar: { respondent: string; question: string; snippet: string };
+      questionMix: { [q: string]: number };
+    }[];
+    questionSim: number[][];
+    charts: { scatter: string; questionSim: string; dendrogram: string };
+  };
+  features: {
+    variables: string[];
+    table: Record<string, number | string>[];
+    corr: { labels: string[]; matrix: number[][] };
+    regression: {
+      formula: string; n: number; r2: number; adjR2: number; f_p: number;
+      coefs: { name: string; coef: number; se: number; p: number }[];
+    };
+    mediation: {
+      path: string; a: number; b: number; c_total: number; c_direct: number;
+      indirect: number; sobelZ: number; sobelP: number;
+    };
+    chart: string;
+    caveat: string;
+  };
+  preprocessing: {
+    rawExample: { label: string; text: string };
+    pipeline: string[];
+    userDict: string[];
+    meaningfulAdv: string[];
+    stopwordCount: number;
+    stopwordSample: string[];
+    tokenExample: { surface: string; tag: string }[];
+  };
 }
 
 export interface NetworkData {

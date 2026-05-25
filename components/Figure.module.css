@@ -1,0 +1,22 @@
+.figure {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.caption {
+  margin-top: 10px;
+  font-size: 0.82rem;
+  color: var(--faint);
+  text-align: center;
+  line-height: 1.5;
+}

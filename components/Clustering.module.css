@@ -1,0 +1,124 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.intro {
+  font-size: 0.92rem;
+  color: var(--muted);
+  background: var(--surface-2);
+  border-radius: 10px;
+  padding: 14px 18px;
+  line-height: 1.6;
+}
+.intro b {
+  color: var(--primary-dark);
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+.badge {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 12px 22px;
+  text-align: center;
+}
+.bv {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+.bl {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.badgeNote {
+  flex: 1 1 280px;
+  font-size: 0.82rem;
+  color: var(--faint);
+  line-height: 1.5;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.clusters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cluster {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 12px 14px;
+}
+.cHead {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.88rem;
+  margin-bottom: 8px;
+}
+.cDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.cSize {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.cMix {
+  font-size: 0.74rem;
+  color: var(--faint);
+  margin-left: auto;
+}
+.cTerms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+.term {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2px 8px;
+}
+.exemplar {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.exTag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-right: 6px;
+}
+
+@media (max-width: 820px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

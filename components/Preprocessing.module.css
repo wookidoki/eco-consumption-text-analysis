@@ -1,0 +1,156 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px 20px;
+}
+
+.h {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+.h span {
+  color: var(--faint);
+  font-weight: 500;
+  font-size: 0.82rem;
+}
+
+.quote {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--muted);
+  border-left: 3px solid var(--primary-soft);
+  padding-left: 14px;
+}
+
+.priv {
+  margin-top: 10px;
+  font-size: 0.78rem;
+  color: var(--faint);
+}
+
+.pipeline {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pipeline li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+.num {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  font-size: 0.76rem;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+}
+
+.tokens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.token {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 5px 9px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.token em {
+  font-style: normal;
+  font-size: 0.66rem;
+  color: var(--faint);
+  font-weight: 500;
+  margin-top: 1px;
+}
+
+.note {
+  margin-top: 10px;
+  font-size: 0.84rem;
+  color: var(--muted);
+}
+.note b {
+  color: var(--primary-dark);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.chip {
+  font-size: 0.82rem;
+  padding: 3px 9px;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+}
+.stop {
+  background: #f6eef0;
+  color: #a05666;
+  border-color: #f0dde1;
+  text-decoration: line-through;
+  text-decoration-color: #cf9aa6;
+}
+.keep {
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  border-color: #cfe8d8;
+}
+.adv {
+  background: #eef2fa;
+  color: #2f5fa0;
+  border-color: #dde6f4;
+}
+.more {
+  color: var(--faint);
+  font-weight: 700;
+}
+
+.dictRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 820px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .dictRow {
+    grid-template-columns: 1fr;
+  }
+}

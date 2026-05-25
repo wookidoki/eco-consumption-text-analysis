@@ -1,4 +1,16 @@
+# 기본 텍스트 분석 (analyze.py)
 kiwipiepy>=0.17
 scikit-learn>=1.4
 networkx>=3.2
 pandas>=2.0
+
+# 고급 통계/시각화 (analyze_advanced.py)
+matplotlib>=3.8
+seaborn>=0.13
+scipy>=1.11
+statsmodels>=0.14
+
+# 딥러닝 임베딩 (SBERT) — CPU
+torch>=2.2
+sentence-transformers>=2.6
+transformers>=4.40

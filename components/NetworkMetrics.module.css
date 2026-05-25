@@ -1,0 +1,39 @@
+.wrap {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 12px 10px;
+  text-align: center;
+}
+
+.v {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  font-variant-numeric: tabular-nums;
+}
+
+.l {
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+.l em {
+  display: block;
+  font-style: normal;
+  font-size: 0.68rem;
+  color: var(--faint);
+}
+
+@media (max-width: 720px) {
+  .wrap {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

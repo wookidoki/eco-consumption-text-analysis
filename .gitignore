@@ -45,5 +45,7 @@ next-env.d.ts
 /analysis/data/*.docx
 /analysis/output/
 /analysis/_*.txt
+__pycache__/
+*.pyc
 
 .vercel
