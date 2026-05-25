@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import styles from "./NetworkGraph.module.css";
-import type { Report } from "@/lib/report";
+import type { NetworkData } from "@/lib/report";
 
 const W = 1000;
 const H = 680;
@@ -17,12 +17,16 @@ const COMM_COLORS = [
 
 export default function NetworkGraph({
   network,
+  networkLatent,
 }: {
-  network: Report["network"];
+  network: NetworkData;
+  networkLatent: NetworkData;
 }) {
+  const [mode, setMode] = useState<"full" | "latent">("full");
   const [hover, setHover] = useState<string | null>(null);
 
-  const { nodes, edges } = network;
+  const active = mode === "full" ? network : networkLatent;
+  const { nodes, edges } = active;
 
   const pos = useMemo(() => {
     const m: Record<string, { x: number; y: number }> = {};
@@ -53,6 +57,32 @@ export default function NetworkGraph({
 
   return (
     <div className={styles.wrap}>
+      <div className={styles.toolbar}>
+        <button
+          className={`${styles.toggle} ${mode === "full" ? styles.on : ""}`}
+          onClick={() => {
+            setMode("full");
+            setHover(null);
+          }}
+        >
+          전체 단어
+        </button>
+        <button
+          className={`${styles.toggle} ${mode === "latent" ? styles.on : ""}`}
+          onClick={() => {
+            setMode("latent");
+            setHover(null);
+          }}
+        >
+          주제어 제외 (잠재 구조)
+        </button>
+        <span className={styles.toolHint}>
+          {mode === "full"
+            ? "전체 핵심어 연결망"
+            : "‘친환경소비행동·실천·사용’ 등 자명한 주제어를 빼면 종사자·센터·함께 등 숨은 구조가 드러납니다"}
+        </span>
+      </div>
+
       <div className={styles.canvas}>
         <svg
           viewBox={`0 0 ${W} ${H}`}
@@ -65,7 +95,7 @@ export default function NetworkGraph({
               const a = pos[e.source];
               const b = pos[e.target];
               if (!a || !b) return null;
-              const active =
+              const on =
                 !neighbors ||
                 (neighbors.has(e.source) && neighbors.has(e.target));
               return (
@@ -77,7 +107,7 @@ export default function NetworkGraph({
                   y2={b.y}
                   stroke="#1f8a55"
                   strokeWidth={0.6 + (e.weight / maxW) * 3}
-                  strokeOpacity={active ? 0.28 : 0.04}
+                  strokeOpacity={on ? 0.28 : 0.04}
                 />
               );
             })}
@@ -125,9 +155,11 @@ export default function NetworkGraph({
           <span>원 크기 = 연결중심성 (클수록 핵심어)</span>
         </div>
         <div className={styles.legendItem}>
-          <span>색 = 주제 군집 {network.communityCount}개</span>
+          <span>색 = 주제 군집 {active.communityCount}개</span>
         </div>
-        <div className={styles.legendHint}>단어에 마우스를 올리면 직접 연결된 단어가 강조됩니다.</div>
+        <div className={styles.legendHint}>
+          단어에 마우스를 올리면 직접 연결된 단어가 강조됩니다.
+        </div>
       </div>
     </div>
   );

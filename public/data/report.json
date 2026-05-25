@@ -2,7 +2,7 @@
   "meta": {
     "title": "친환경소비행동 인터뷰 텍스트 분석",
     "subtitle": "서울중구가족센터 · 응답자 20명 × 질문 4개",
-    "generatedAt": "2026-05-25T13:14:03.731653+09:00",
+    "generatedAt": "2026-05-25T14:04:35.726077+09:00",
     "source": "eco_review_final_test0520.txt",
     "questions": {
       "Q1": "친환경소비행동 활동에 대한 전반적 느낀점",
@@ -10,7 +10,7 @@
       "Q3": "활동 후 가정에서의 변화",
       "Q4": "나의 다짐"
     },
-    "method": "Kiwi 형태소분석 → 키워드 빈도 / TF-IDF / 의미연결망 중심성"
+    "method": "Kiwi 형태소분석 → 키워드 빈도 / TF-IDF(응답자 80문서) / 의미연결망 중심성"
   },
   "adequacy": {
     "totalResponses": 80,
@@ -644,6 +644,10 @@
         "count": 92
       },
       {
+        "word": "함께",
+        "count": 73
+      },
+      {
         "word": "센터",
         "count": 68
       },
@@ -812,20 +816,16 @@
         "count": 15
       },
       {
+        "word": "꾸준히",
+        "count": 15
+      },
+      {
         "word": "자연",
         "count": 15
       },
       {
         "word": "시간",
         "count": 15
-      },
-      {
-        "word": "가치",
-        "count": 14
-      },
-      {
-        "word": "관심",
-        "count": 14
       }
     ],
     "byQuestion": {
@@ -845,6 +845,10 @@
         {
           "word": "센터",
           "count": 35
+        },
+        {
+          "word": "함께",
+          "count": 31
         },
         {
           "word": "사용",
@@ -925,10 +929,6 @@
         {
           "word": "텀블러",
           "count": 6
-        },
-        {
-          "word": "마켓",
-          "count": 6
         }
       ],
       "Q2": [
@@ -962,6 +962,10 @@
         },
         {
           "word": "기억",
+          "count": 17
+        },
+        {
+          "word": "함께",
           "count": 17
         },
         {
@@ -1017,19 +1021,15 @@
           "count": 8
         },
         {
+          "word": "직접",
+          "count": 7
+        },
+        {
           "word": "빌딩",
           "count": 7
         },
         {
           "word": "개인",
-          "count": 6
-        },
-        {
-          "word": "물품",
-          "count": 6
-        },
-        {
-          "word": "참여자",
           "count": 6
         }
       ],
@@ -1077,6 +1077,10 @@
         {
           "word": "제품",
           "count": 14
+        },
+        {
+          "word": "함께",
+          "count": 13
         },
         {
           "word": "활동",
@@ -1129,10 +1133,6 @@
         {
           "word": "활용",
           "count": 8
-        },
-        {
-          "word": "구입",
-          "count": 8
         }
       ],
       "Q4": [
@@ -1153,8 +1153,16 @@
           "count": 13
         },
         {
+          "word": "함께",
+          "count": 12
+        },
+        {
           "word": "활동",
           "count": 11
+        },
+        {
+          "word": "꾸준히",
+          "count": 10
         },
         {
           "word": "지속",
@@ -1227,14 +1235,6 @@
         {
           "word": "친환경",
           "count": 5
-        },
-        {
-          "word": "구매",
-          "count": 5
-        },
-        {
-          "word": "주변",
-          "count": 5
         }
       ]
     }
@@ -1242,250 +1242,250 @@
   "tfidf": {
     "Q1": [
       {
-        "word": "실천",
-        "score": 0.4336
+        "word": "친환경소비행동",
+        "score": 0.1449
       },
       {
-        "word": "친환경소비행동",
-        "score": 0.369
+        "word": "실천",
+        "score": 0.137
       },
       {
         "word": "활동",
-        "score": 0.3321
+        "score": 0.1358
+      },
+      {
+        "word": "함께",
+        "score": 0.1191
       },
       {
         "word": "센터",
-        "score": 0.3229
-      },
-      {
-        "word": "사용",
-        "score": 0.2306
+        "score": 0.1169
       },
       {
         "word": "종사자",
-        "score": 0.2144
-      },
-      {
-        "word": "환경",
-        "score": 0.1753
-      },
-      {
-        "word": "교육",
-        "score": 0.1693
-      },
-      {
-        "word": "혼자",
-        "score": 0.1591
-      },
-      {
-        "word": "지속",
-        "score": 0.1107
+        "score": 0.0935
       },
       {
         "word": "행동",
-        "score": 0.1107
+        "score": 0.0753
       },
       {
-        "word": "물건",
-        "score": 0.0923
+        "word": "환경",
+        "score": 0.0752
       },
       {
-        "word": "보호",
-        "score": 0.0923
+        "word": "교육",
+        "score": 0.075
       },
       {
-        "word": "친환경소비",
-        "score": 0.0884
+        "word": "사용",
+        "score": 0.0734
       },
       {
         "word": "참여",
-        "score": 0.083
+        "score": 0.0724
+      },
+      {
+        "word": "지속",
+        "score": 0.0655
+      },
+      {
+        "word": "조직",
+        "score": 0.0641
+      },
+      {
+        "word": "물건",
+        "score": 0.0633
+      },
+      {
+        "word": "소비",
+        "score": 0.0633
       }
     ],
     "Q2": [
       {
-        "word": "실천",
-        "score": 0.4076
-      },
-      {
         "word": "활동",
-        "score": 0.3442
+        "score": 0.1255
       },
       {
-        "word": "사용",
-        "score": 0.2989
+        "word": "실천",
+        "score": 0.1236
       },
       {
         "word": "물건",
-        "score": 0.2536
+        "score": 0.1066
       },
       {
         "word": "기억",
-        "score": 0.2326
+        "score": 0.0946
       },
       {
         "word": "필요",
-        "score": 0.2264
+        "score": 0.0944
+      },
+      {
+        "word": "사용",
+        "score": 0.092
       },
       {
         "word": "종사자",
-        "score": 0.2105
-      },
-      {
-        "word": "마켓",
-        "score": 0.1994
-      },
-      {
-        "word": "경험",
-        "score": 0.1505
-      },
-      {
-        "word": "사람",
-        "score": 0.144
-      },
-      {
-        "word": "친환경소비행동",
-        "score": 0.1359
+        "score": 0.0792
       },
       {
         "word": "워크숍",
-        "score": 0.1232
+        "score": 0.079
+      },
+      {
+        "word": "마켓",
+        "score": 0.0743
       },
       {
         "word": "교육",
-        "score": 0.1219
-      },
-      {
-        "word": "개인컵",
-        "score": 0.1108
+        "score": 0.0619
       },
       {
         "word": "행동",
-        "score": 0.1087
+        "score": 0.0619
+      },
+      {
+        "word": "계획",
+        "score": 0.0613
+      },
+      {
+        "word": "경험",
+        "score": 0.0612
+      },
+      {
+        "word": "개인컵",
+        "score": 0.0603
+      },
+      {
+        "word": "사람",
+        "score": 0.0582
       }
     ],
     "Q3": [
       {
         "word": "사용",
-        "score": 0.4163
-      },
-      {
-        "word": "실천",
-        "score": 0.2775
+        "score": 0.1275
       },
       {
         "word": "가정",
-        "score": 0.2602
-      },
-      {
-        "word": "변화",
-        "score": 0.2037
+        "score": 0.1205
       },
       {
         "word": "음식",
-        "score": 0.2037
-      },
-      {
-        "word": "노력",
-        "score": 0.1943
+        "score": 0.1041
       },
       {
         "word": "배달",
-        "score": 0.1923
+        "score": 0.0898
+      },
+      {
+        "word": "변화",
+        "score": 0.0881
       },
       {
         "word": "아이",
-        "score": 0.1697
+        "score": 0.0828
       },
       {
-        "word": "제품",
-        "score": 0.1584
-      },
-      {
-        "word": "환경",
-        "score": 0.1573
+        "word": "노력",
+        "score": 0.0722
       },
       {
         "word": "가족",
-        "score": 0.1388
+        "score": 0.0706
       },
       {
-        "word": "비닐",
-        "score": 0.1245
+        "word": "제품",
+        "score": 0.0682
+      },
+      {
+        "word": "물티슈",
+        "score": 0.0669
+      },
+      {
+        "word": "배출",
+        "score": 0.0666
+      },
+      {
+        "word": "실천",
+        "score": 0.0655
+      },
+      {
+        "word": "일회용품",
+        "score": 0.0635
       },
       {
         "word": "주문",
-        "score": 0.1241
+        "score": 0.0598
       },
       {
-        "word": "물건",
-        "score": 0.1203
-      },
-      {
-        "word": "활동",
-        "score": 0.1203
+        "word": "장바구니",
+        "score": 0.0588
       }
     ],
     "Q4": [
       {
         "word": "실천",
-        "score": 0.5501
+        "score": 0.1686
       },
       {
         "word": "친환경소비행동",
-        "score": 0.3713
+        "score": 0.1312
+      },
+      {
+        "word": "꾸준히",
+        "score": 0.0894
       },
       {
         "word": "센터",
-        "score": 0.2476
-      },
-      {
-        "word": "노력",
-        "score": 0.1788
-      },
-      {
-        "word": "활동",
-        "score": 0.1513
-      },
-      {
-        "word": "사용",
-        "score": 0.1375
-      },
-      {
-        "word": "지속",
-        "score": 0.1375
-      },
-      {
-        "word": "생활",
-        "score": 0.1238
+        "score": 0.0829
       },
       {
         "word": "가족",
-        "score": 0.11
+        "score": 0.0803
       },
       {
-        "word": "환경",
-        "score": 0.11
+        "word": "노력",
+        "score": 0.0756
       },
       {
-        "word": "세상",
-        "score": 0.1054
+        "word": "함께",
+        "score": 0.0716
+      },
+      {
+        "word": "생활",
+        "score": 0.071
+      },
+      {
+        "word": "지속",
+        "score": 0.0689
+      },
+      {
+        "word": "자연",
+        "score": 0.0603
       },
       {
         "word": "주변",
-        "score": 0.1039
-      },
-      {
-        "word": "구입",
-        "score": 0.1009
+        "score": 0.0597
       },
       {
         "word": "사람",
-        "score": 0.1009
+        "score": 0.0589
+      },
+      {
+        "word": "물건",
+        "score": 0.0573
       },
       {
         "word": "참여자",
-        "score": 0.1009
+        "score": 0.0566
+      },
+      {
+        "word": "프로그램",
+        "score": 0.0566
       }
     ]
   },
@@ -1494,402 +1494,402 @@
       {
         "id": "실천",
         "freq": 162,
-        "degree": 0.5641,
-        "betweenness": 0.1235,
-        "eigenvector": 0.3535,
+        "degree": 0.5897,
+        "betweenness": 0.1194,
+        "eigenvector": 0.345,
         "community": 0,
-        "x": 0.4208,
-        "y": 0.3823
+        "x": 0.4515,
+        "y": 0.3531
       },
       {
         "id": "사용",
         "freq": 113,
         "degree": 0.5385,
-        "betweenness": 0.1323,
-        "eigenvector": 0.2919,
+        "betweenness": 0.0837,
+        "eigenvector": 0.2792,
         "community": 1,
-        "x": 0.359,
-        "y": 0.4691
+        "x": 0.5696,
+        "y": 0.3589
       },
       {
         "id": "활동",
         "freq": 98,
-        "degree": 0.5128,
-        "betweenness": 0.056,
-        "eigenvector": 0.3284,
+        "degree": 0.5385,
+        "betweenness": 0.052,
+        "eigenvector": 0.3204,
         "community": 0,
-        "x": 0.4351,
-        "y": 0.2608
+        "x": 0.3225,
+        "y": 0.3685
       },
       {
         "id": "친환경소비행동",
         "freq": 92,
-        "degree": 0.6154,
-        "betweenness": 0.1161,
-        "eigenvector": 0.3532,
+        "degree": 0.641,
+        "betweenness": 0.112,
+        "eigenvector": 0.3395,
         "community": 0,
-        "x": 0.4495,
-        "y": 0.3538
+        "x": 0.426,
+        "y": 0.3776
+      },
+      {
+        "id": "함께",
+        "freq": 73,
+        "degree": 0.3846,
+        "betweenness": 0.0243,
+        "eigenvector": 0.267,
+        "community": 0,
+        "x": 0.3662,
+        "y": 0.4088
       },
       {
         "id": "센터",
         "freq": 68,
-        "degree": 0.3846,
-        "betweenness": 0.054,
-        "eigenvector": 0.2716,
+        "degree": 0.4103,
+        "betweenness": 0.0513,
+        "eigenvector": 0.2651,
         "community": 0,
-        "x": 0.3772,
-        "y": 0.2956
+        "x": 0.3794,
+        "y": 0.2876
       },
       {
         "id": "물건",
         "freq": 58,
-        "degree": 0.2308,
-        "betweenness": 0.0378,
-        "eigenvector": 0.1312,
+        "degree": 0.2564,
+        "betweenness": 0.0499,
+        "eigenvector": 0.1307,
         "community": 2,
-        "x": 0.5641,
-        "y": 0.4694
+        "x": 0.5031,
+        "y": 0.5177
       },
       {
         "id": "환경",
         "freq": 54,
-        "degree": 0.3846,
-        "betweenness": 0.0688,
-        "eigenvector": 0.2751,
+        "degree": 0.4103,
+        "betweenness": 0.0729,
+        "eigenvector": 0.2652,
         "community": 0,
-        "x": 0.383,
-        "y": 0.3399
+        "x": 0.4114,
+        "y": 0.3168
       },
       {
         "id": "필요",
         "freq": 47,
         "degree": 0.2051,
         "betweenness": 0.0027,
-        "eigenvector": 0.1458,
+        "eigenvector": 0.1303,
         "community": 2,
-        "x": 0.5116,
-        "y": 0.43
+        "x": 0.5119,
+        "y": 0.4263
       },
       {
         "id": "노력",
         "freq": 47,
         "degree": 0.3077,
-        "betweenness": 0.0607,
-        "eigenvector": 0.1569,
+        "betweenness": 0.0553,
+        "eigenvector": 0.138,
         "community": 1,
-        "x": 0.4326,
-        "y": 0.5035
+        "x": 0.6051,
+        "y": 0.4145
       },
       {
         "id": "종사자",
         "freq": 41,
-        "degree": 0.3846,
-        "betweenness": 0.058,
-        "eigenvector": 0.2518,
+        "degree": 0.4103,
+        "betweenness": 0.054,
+        "eigenvector": 0.2511,
         "community": 0,
-        "x": 0.4776,
-        "y": 0.247
+        "x": 0.2879,
+        "y": 0.3928
       },
       {
         "id": "행동",
         "freq": 36,
-        "degree": 0.2051,
+        "degree": 0.2308,
         "betweenness": 0.0,
-        "eigenvector": 0.183,
+        "eigenvector": 0.1838,
         "community": 0,
-        "x": 0.3965,
-        "y": 0.2098
+        "x": 0.3236,
+        "y": 0.2963
       },
       {
         "id": "지속",
         "freq": 28,
-        "degree": 0.2564,
-        "betweenness": 0.0081,
-        "eigenvector": 0.187,
+        "degree": 0.2821,
+        "betweenness": 0.0094,
+        "eigenvector": 0.1882,
         "community": 0,
-        "x": 0.3197,
-        "y": 0.3181
+        "x": 0.2786,
+        "y": 0.3142
       },
       {
         "id": "교육",
         "freq": 28,
-        "degree": 0.2821,
-        "betweenness": 0.0459,
-        "eigenvector": 0.2135,
+        "degree": 0.3077,
+        "betweenness": 0.0351,
+        "eigenvector": 0.2141,
         "community": 0,
-        "x": 0.3596,
-        "y": 0.2256
+        "x": 0.3001,
+        "y": 0.4368
       },
       {
         "id": "가정",
         "freq": 28,
         "degree": 0.2308,
-        "betweenness": 0.0675,
-        "eigenvector": 0.0795,
+        "betweenness": 0.0661,
+        "eigenvector": 0.0692,
         "community": 1,
-        "x": 0.3337,
-        "y": 0.7032
+        "x": 0.765,
+        "y": 0.234
       },
       {
         "id": "마켓",
         "freq": 27,
         "degree": 0.2308,
         "betweenness": 0.0243,
-        "eigenvector": 0.1166,
+        "eigenvector": 0.106,
         "community": 2,
-        "x": 0.5648,
-        "y": 0.345
+        "x": 0.3318,
+        "y": 0.5397
       },
       {
         "id": "사람",
         "freq": 26,
         "degree": 0.1538,
         "betweenness": 0.0162,
-        "eigenvector": 0.0839,
+        "eigenvector": 0.0752,
         "community": 2,
-        "x": 0.6625,
-        "y": 0.3347
+        "x": 0.3814,
+        "y": 0.5961
       },
       {
         "id": "가족",
         "freq": 26,
-        "degree": 0.1282,
-        "betweenness": 0.0121,
-        "eigenvector": 0.0886,
+        "degree": 0.1538,
+        "betweenness": 0.0135,
+        "eigenvector": 0.0993,
         "community": 1,
-        "x": 0.315,
-        "y": 0.5229
+        "x": 0.5299,
+        "y": 0.2437
       },
       {
         "id": "친환경",
         "freq": 25,
-        "degree": 0.1538,
-        "betweenness": 0.0013,
-        "eigenvector": 0.1021,
+        "degree": 0.1795,
+        "betweenness": 0.004,
+        "eigenvector": 0.1073,
         "community": 2,
-        "x": 0.6073,
-        "y": 0.4133
+        "x": 0.4345,
+        "y": 0.5376
       },
       {
         "id": "변화",
         "freq": 24,
         "degree": 0.2308,
         "betweenness": 0.0661,
-        "eigenvector": 0.0937,
+        "eigenvector": 0.0806,
         "community": 1,
-        "x": 0.3516,
-        "y": 0.6233
+        "x": 0.7434,
+        "y": 0.3543
       },
       {
         "id": "개인",
         "freq": 23,
         "degree": 0.1795,
         "betweenness": 0.0081,
-        "eigenvector": 0.1363,
+        "eigenvector": 0.1212,
         "community": 0,
-        "x": 0.5397,
-        "y": 0.2594
+        "x": 0.421,
+        "y": 0.2068
       },
       {
         "id": "생활",
         "freq": 23,
         "degree": 0.1026,
         "betweenness": 0.0013,
-        "eigenvector": 0.0608,
+        "eigenvector": 0.053,
         "community": 1,
-        "x": 0.2171,
-        "y": 0.4106
+        "x": 0.5807,
+        "y": 0.1759
       },
       {
         "id": "보호",
         "freq": 23,
         "degree": 0.1795,
         "betweenness": 0.004,
-        "eigenvector": 0.1464,
+        "eigenvector": 0.1314,
         "community": 0,
-        "x": 0.2597,
-        "y": 0.2743
+        "x": 0.2805,
+        "y": 0.2184
       },
       {
         "id": "음식",
         "freq": 22,
         "degree": 0.1795,
         "betweenness": 0.0027,
-        "eigenvector": 0.0649,
+        "eigenvector": 0.0535,
         "community": 1,
-        "x": 0.2715,
-        "y": 0.6708
+        "x": 0.839,
+        "y": 0.3489
       },
       {
         "id": "일회용품",
         "freq": 22,
         "degree": 0.2051,
         "betweenness": 0.0405,
-        "eigenvector": 0.1028,
+        "eigenvector": 0.0888,
         "community": 1,
-        "x": 0.2588,
-        "y": 0.5208
+        "x": 0.6709,
+        "y": 0.286
       },
       {
         "id": "배달",
         "freq": 21,
         "degree": 0.1795,
         "betweenness": 0.0,
-        "eigenvector": 0.0712,
+        "eigenvector": 0.0587,
         "community": 1,
-        "x": 0.2368,
-        "y": 0.6287
+        "x": 0.8082,
+        "y": 0.2973
       },
       {
         "id": "구매",
         "freq": 21,
         "degree": 0.1795,
         "betweenness": 0.0351,
-        "eigenvector": 0.0546,
+        "eigenvector": 0.0469,
         "community": 2,
-        "x": 0.5314,
-        "y": 0.6637
+        "x": 0.7421,
+        "y": 0.5079
       },
       {
         "id": "물품",
         "freq": 20,
         "degree": 0.1795,
         "betweenness": 0.0607,
-        "eigenvector": 0.0438,
+        "eigenvector": 0.038,
         "community": 2,
-        "x": 0.7138,
-        "y": 0.552
+        "x": 0.5323,
+        "y": 0.697
       },
       {
         "id": "아이",
         "freq": 20,
         "degree": 0.0256,
         "betweenness": 0.0,
-        "eigenvector": 0.0056,
+        "eigenvector": 0.0045,
         "community": 1,
-        "x": 0.2468,
-        "y": 1.0
+        "x": 1.0,
+        "y": 0.0
       },
       {
         "id": "기억",
         "freq": 19,
         "degree": 0.0513,
         "betweenness": 0.0,
-        "eigenvector": 0.04,
+        "eigenvector": 0.0365,
         "community": 0,
-        "x": 0.5435,
-        "y": 0.0068
+        "x": 0.0,
+        "y": 0.3937
       },
       {
         "id": "가능",
         "freq": 18,
         "degree": 0.1538,
         "betweenness": 0.0,
-        "eigenvector": 0.1107,
+        "eigenvector": 0.0992,
         "community": 0,
-        "x": 0.257,
-        "y": 0.2015
+        "x": 0.1844,
+        "y": 0.2425
       },
       {
         "id": "계획",
         "freq": 18,
-        "degree": 0.1282,
+        "degree": 0.1538,
         "betweenness": 0.0,
-        "eigenvector": 0.094,
+        "eigenvector": 0.1017,
         "community": 0,
-        "x": 0.3924,
-        "y": 0.106
+        "x": 0.1827,
+        "y": 0.3185
       },
       {
         "id": "중요",
         "freq": 17,
         "degree": 0.0769,
         "betweenness": 0.0,
-        "eigenvector": 0.0656,
+        "eigenvector": 0.0589,
         "community": 0,
-        "x": 0.5979,
-        "y": 0.192
+        "x": 0.1589,
+        "y": 0.3914
       },
       {
         "id": "시작",
         "freq": 17,
-        "degree": 0.0513,
+        "degree": 0.0769,
         "betweenness": 0.0,
-        "eigenvector": 0.0345,
+        "eigenvector": 0.0473,
         "community": 0,
-        "x": 0.287,
-        "y": 0.0
+        "x": 0.1163,
+        "y": 0.534
       },
       {
         "id": "비닐",
         "freq": 17,
         "degree": 0.1282,
         "betweenness": 0.0,
-        "eigenvector": 0.0438,
+        "eigenvector": 0.0365,
         "community": 1,
-        "x": 0.2037,
-        "y": 0.7225
+        "x": 0.8965,
+        "y": 0.2593
       },
       {
         "id": "제품",
         "freq": 17,
         "degree": 0.0513,
         "betweenness": 0.0,
-        "eigenvector": 0.0116,
+        "eigenvector": 0.0093,
         "community": 2,
-        "x": 0.5014,
-        "y": 0.8517
+        "x": 0.9746,
+        "y": 0.5214
       },
       {
         "id": "활용",
         "freq": 17,
         "degree": 0.0256,
         "betweenness": 0.0,
-        "eigenvector": 0.003,
+        "eigenvector": 0.0024,
         "community": 2,
-        "x": 1.0,
-        "y": 0.6718
+        "x": 0.5015,
+        "y": 1.0
       },
       {
         "id": "습관",
         "freq": 17,
         "degree": 0.0769,
         "betweenness": 0.0013,
-        "eigenvector": 0.0485,
+        "eigenvector": 0.0427,
         "community": 2,
-        "x": 0.5473,
-        "y": 0.5952
+        "x": 0.6789,
+        "y": 0.5592
       },
       {
         "id": "참여",
         "freq": 16,
         "degree": 0.1282,
         "betweenness": 0.0,
-        "eigenvector": 0.1006,
+        "eigenvector": 0.0898,
         "community": 0,
-        "x": 0.5117,
-        "y": 0.1457
+        "x": 0.3086,
+        "y": 0.17
       },
       {
         "id": "프로그램",
         "freq": 16,
         "degree": 0.1026,
-        "betweenness": 0.0121,
-        "eigenvector": 0.0411,
+        "betweenness": 0.0094,
+        "eigenvector": 0.0352,
         "community": 2,
-        "x": 0.7118,
-        "y": 0.4569
-      },
-      {
-        "id": "텀블러",
-        "freq": 16,
-        "degree": 0.0256,
-        "betweenness": 0.0,
-        "eigenvector": 0.0188,
-        "community": 1,
-        "x": 0.0,
-        "y": 0.4171
+        "x": 0.557,
+        "y": 0.6353
       }
     ],
     "edges": [
@@ -1934,6 +1934,12 @@
         "target": "필요",
         "weight": 0.418,
         "count": 17
+      },
+      {
+        "source": "실천",
+        "target": "함께",
+        "weight": 0.76,
+        "count": 40
       },
       {
         "source": "실천",
@@ -2081,9 +2087,9 @@
       },
       {
         "source": "사용",
-        "target": "텀블러",
-        "weight": 0.41,
-        "count": 10
+        "target": "함께",
+        "weight": 0.576,
+        "count": 29
       },
       {
         "source": "사용",
@@ -2195,6 +2201,12 @@
       },
       {
         "source": "활동",
+        "target": "함께",
+        "weight": 0.653,
+        "count": 31
+      },
+      {
+        "source": "활동",
         "target": "환경",
         "weight": 0.664,
         "count": 28
@@ -2303,6 +2315,12 @@
       },
       {
         "source": "친환경소비행동",
+        "target": "함께",
+        "weight": 0.654,
+        "count": 32
+      },
+      {
+        "source": "친환경소비행동",
         "target": "노력",
         "weight": 0.545,
         "count": 22
@@ -2378,6 +2396,72 @@
         "target": "보호",
         "weight": 0.475,
         "count": 14
+      },
+      {
+        "source": "함께",
+        "target": "물건",
+        "weight": 0.408,
+        "count": 14
+      },
+      {
+        "source": "함께",
+        "target": "종사자",
+        "weight": 0.655,
+        "count": 25
+      },
+      {
+        "source": "함께",
+        "target": "친환경",
+        "weight": 0.446,
+        "count": 14
+      },
+      {
+        "source": "함께",
+        "target": "교육",
+        "weight": 0.529,
+        "count": 17
+      },
+      {
+        "source": "함께",
+        "target": "센터",
+        "weight": 0.601,
+        "count": 27
+      },
+      {
+        "source": "함께",
+        "target": "시작",
+        "weight": 0.405,
+        "count": 10
+      },
+      {
+        "source": "함께",
+        "target": "지속",
+        "weight": 0.536,
+        "count": 18
+      },
+      {
+        "source": "함께",
+        "target": "환경",
+        "weight": 0.552,
+        "count": 23
+      },
+      {
+        "source": "함께",
+        "target": "계획",
+        "weight": 0.405,
+        "count": 10
+      },
+      {
+        "source": "함께",
+        "target": "행동",
+        "weight": 0.458,
+        "count": 16
+      },
+      {
+        "source": "함께",
+        "target": "가족",
+        "weight": 0.522,
+        "count": 16
       },
       {
         "source": "센터",
@@ -2881,110 +2965,1146 @@
     "centralWords": [
       {
         "word": "친환경소비행동",
-        "degree": 0.6154,
-        "betweenness": 0.1161,
-        "eigenvector": 0.3532,
+        "degree": 0.641,
+        "betweenness": 0.112,
+        "eigenvector": 0.3395,
         "freq": 92
       },
       {
         "word": "실천",
-        "degree": 0.5641,
-        "betweenness": 0.1235,
-        "eigenvector": 0.3535,
+        "degree": 0.5897,
+        "betweenness": 0.1194,
+        "eigenvector": 0.345,
         "freq": 162
       },
       {
         "word": "사용",
         "degree": 0.5385,
-        "betweenness": 0.1323,
-        "eigenvector": 0.2919,
+        "betweenness": 0.0837,
+        "eigenvector": 0.2792,
         "freq": 113
       },
       {
         "word": "활동",
-        "degree": 0.5128,
-        "betweenness": 0.056,
-        "eigenvector": 0.3284,
+        "degree": 0.5385,
+        "betweenness": 0.052,
+        "eigenvector": 0.3204,
         "freq": 98
       },
       {
         "word": "센터",
-        "degree": 0.3846,
-        "betweenness": 0.054,
-        "eigenvector": 0.2716,
+        "degree": 0.4103,
+        "betweenness": 0.0513,
+        "eigenvector": 0.2651,
         "freq": 68
       },
       {
         "word": "환경",
-        "degree": 0.3846,
-        "betweenness": 0.0688,
-        "eigenvector": 0.2751,
+        "degree": 0.4103,
+        "betweenness": 0.0729,
+        "eigenvector": 0.2652,
         "freq": 54
       },
       {
         "word": "종사자",
-        "degree": 0.3846,
-        "betweenness": 0.058,
-        "eigenvector": 0.2518,
+        "degree": 0.4103,
+        "betweenness": 0.054,
+        "eigenvector": 0.2511,
         "freq": 41
+      },
+      {
+        "word": "함께",
+        "degree": 0.3846,
+        "betweenness": 0.0243,
+        "eigenvector": 0.267,
+        "freq": 73
       },
       {
         "word": "노력",
         "degree": 0.3077,
-        "betweenness": 0.0607,
-        "eigenvector": 0.1569,
+        "betweenness": 0.0553,
+        "eigenvector": 0.138,
         "freq": 47
       },
       {
         "word": "교육",
-        "degree": 0.2821,
-        "betweenness": 0.0459,
-        "eigenvector": 0.2135,
+        "degree": 0.3077,
+        "betweenness": 0.0351,
+        "eigenvector": 0.2141,
         "freq": 28
       },
       {
         "word": "지속",
-        "degree": 0.2564,
-        "betweenness": 0.0081,
-        "eigenvector": 0.187,
+        "degree": 0.2821,
+        "betweenness": 0.0094,
+        "eigenvector": 0.1882,
         "freq": 28
       },
       {
         "word": "물건",
-        "degree": 0.2308,
-        "betweenness": 0.0378,
-        "eigenvector": 0.1312,
+        "degree": 0.2564,
+        "betweenness": 0.0499,
+        "eigenvector": 0.1307,
         "freq": 58
+      },
+      {
+        "word": "행동",
+        "degree": 0.2308,
+        "betweenness": 0.0,
+        "eigenvector": 0.1838,
+        "freq": 36
       },
       {
         "word": "가정",
         "degree": 0.2308,
-        "betweenness": 0.0675,
-        "eigenvector": 0.0795,
+        "betweenness": 0.0661,
+        "eigenvector": 0.0692,
         "freq": 28
       },
       {
         "word": "마켓",
         "degree": 0.2308,
         "betweenness": 0.0243,
-        "eigenvector": 0.1166,
+        "eigenvector": 0.106,
+        "freq": 27
+      }
+    ],
+    "communityCount": 3
+  },
+  "networkLatent": {
+    "nodes": [
+      {
+        "id": "함께",
+        "freq": 73,
+        "degree": 0.2432,
+        "betweenness": 0.0991,
+        "eigenvector": 0.38,
+        "community": 0,
+        "x": 0.6602,
+        "y": 0.3342
+      },
+      {
+        "id": "센터",
+        "freq": 68,
+        "degree": 0.2703,
+        "betweenness": 0.2372,
+        "eigenvector": 0.3542,
+        "community": 0,
+        "x": 0.739,
+        "y": 0.469
+      },
+      {
+        "id": "물건",
+        "freq": 58,
+        "degree": 0.1622,
+        "betweenness": 0.0946,
+        "eigenvector": 0.1757,
+        "community": 1,
+        "x": 0.4883,
+        "y": 0.405
+      },
+      {
+        "id": "필요",
+        "freq": 47,
+        "degree": 0.1081,
+        "betweenness": 0.0691,
+        "eigenvector": 0.1389,
+        "community": 1,
+        "x": 0.5707,
+        "y": 0.4169
+      },
+      {
+        "id": "노력",
+        "freq": 47,
+        "degree": 0.1892,
+        "betweenness": 0.1532,
+        "eigenvector": 0.1594,
+        "community": 2,
+        "x": 0.5453,
+        "y": 0.6347
+      },
+      {
+        "id": "종사자",
+        "freq": 41,
+        "degree": 0.2973,
+        "betweenness": 0.1562,
+        "eigenvector": 0.4131,
+        "community": 0,
+        "x": 0.6779,
+        "y": 0.2844
+      },
+      {
+        "id": "지속",
+        "freq": 28,
+        "degree": 0.1892,
+        "betweenness": 0.0495,
+        "eigenvector": 0.3027,
+        "community": 0,
+        "x": 0.7222,
+        "y": 0.4265
+      },
+      {
+        "id": "교육",
+        "freq": 28,
+        "degree": 0.1622,
+        "betweenness": 0.0465,
+        "eigenvector": 0.2832,
+        "community": 0,
+        "x": 0.7082,
+        "y": 0.259
+      },
+      {
+        "id": "가정",
+        "freq": 28,
+        "degree": 0.1892,
+        "betweenness": 0.1441,
+        "eigenvector": 0.1182,
+        "community": 2,
+        "x": 0.4688,
+        "y": 0.7893
+      },
+      {
+        "id": "마켓",
+        "freq": 27,
+        "degree": 0.1622,
+        "betweenness": 0.0586,
+        "eigenvector": 0.2285,
+        "community": 1,
+        "x": 0.5631,
+        "y": 0.3434
+      },
+      {
+        "id": "사람",
+        "freq": 26,
+        "degree": 0.1081,
+        "betweenness": 0.039,
+        "eigenvector": 0.1325,
+        "community": 1,
+        "x": 0.4958,
+        "y": 0.2756
+      },
+      {
+        "id": "가족",
+        "freq": 26,
+        "degree": 0.0811,
+        "betweenness": 0.0556,
+        "eigenvector": 0.1344,
+        "community": 0,
+        "x": 0.6031,
+        "y": 0.5664
+      },
+      {
+        "id": "변화",
+        "freq": 24,
+        "degree": 0.1622,
+        "betweenness": 0.024,
+        "eigenvector": 0.0983,
+        "community": 2,
+        "x": 0.4541,
+        "y": 0.8841
+      },
+      {
+        "id": "개인",
+        "freq": 23,
+        "degree": 0.0811,
+        "betweenness": 0.039,
+        "eigenvector": 0.0927,
+        "community": 3,
+        "x": 0.7782,
+        "y": 0.2951
+      },
+      {
+        "id": "생활",
+        "freq": 23,
+        "degree": 0.0811,
+        "betweenness": 0.045,
+        "eigenvector": 0.0885,
+        "community": 2,
+        "x": 0.6843,
+        "y": 0.6801
+      },
+      {
+        "id": "보호",
+        "freq": 23,
+        "degree": 0.0811,
+        "betweenness": 0.0,
+        "eigenvector": 0.1269,
+        "community": 0,
+        "x": 0.8662,
+        "y": 0.4524
+      },
+      {
+        "id": "음식",
+        "freq": 22,
+        "degree": 0.1622,
+        "betweenness": 0.0225,
+        "eigenvector": 0.1276,
+        "community": 2,
+        "x": 0.5404,
+        "y": 0.8602
+      },
+      {
+        "id": "일회용품",
+        "freq": 22,
+        "degree": 0.1351,
+        "betweenness": 0.042,
+        "eigenvector": 0.0902,
+        "community": 2,
+        "x": 0.5901,
+        "y": 0.808
+      },
+      {
+        "id": "배달",
+        "freq": 21,
+        "degree": 0.1622,
+        "betweenness": 0.0,
+        "eigenvector": 0.1355,
+        "community": 2,
+        "x": 0.5141,
+        "y": 0.8314
+      },
+      {
+        "id": "구매",
+        "freq": 21,
+        "degree": 0.1892,
+        "betweenness": 0.2312,
+        "eigenvector": 0.1011,
+        "community": 1,
+        "x": 0.3734,
+        "y": 0.5913
+      },
+      {
+        "id": "물품",
+        "freq": 20,
+        "degree": 0.1892,
+        "betweenness": 0.1261,
+        "eigenvector": 0.1281,
+        "community": 1,
+        "x": 0.3991,
+        "y": 0.4683
+      },
+      {
+        "id": "아이",
+        "freq": 20,
+        "degree": 0.027,
+        "betweenness": 0.0,
+        "eigenvector": 0.0183,
+        "community": 2,
+        "x": 0.3785,
+        "y": 1.0
+      },
+      {
+        "id": "기억",
+        "freq": 19,
+        "degree": 0.027,
+        "betweenness": 0.0,
+        "eigenvector": 0.0669,
+        "community": 0,
+        "x": 0.784,
+        "y": 0.3345
+      },
+      {
+        "id": "가능",
+        "freq": 18,
+        "degree": 0.0811,
+        "betweenness": 0.0,
+        "eigenvector": 0.139,
+        "community": 0,
+        "x": 0.8355,
+        "y": 0.5109
+      },
+      {
+        "id": "계획",
+        "freq": 18,
+        "degree": 0.0811,
+        "betweenness": 0.0,
+        "eigenvector": 0.1581,
+        "community": 0,
+        "x": 0.6933,
+        "y": 0.153
+      },
+      {
+        "id": "중요",
+        "freq": 17,
+        "degree": 0.027,
+        "betweenness": 0.0,
+        "eigenvector": 0.0501,
+        "community": 0,
+        "x": 0.9334,
+        "y": 0.5668
+      },
+      {
+        "id": "시작",
+        "freq": 17,
+        "degree": 0.0541,
+        "betweenness": 0.0,
+        "eigenvector": 0.094,
+        "community": 0,
+        "x": 0.7563,
+        "y": 0.1354
+      },
+      {
+        "id": "비닐",
+        "freq": 17,
+        "degree": 0.1081,
+        "betweenness": 0.0,
+        "eigenvector": 0.0774,
+        "community": 2,
+        "x": 0.4985,
+        "y": 0.9574
+      },
+      {
+        "id": "제품",
+        "freq": 17,
+        "degree": 0.0541,
+        "betweenness": 0.0,
+        "eigenvector": 0.0366,
+        "community": 1,
+        "x": 0.3332,
+        "y": 0.767
+      },
+      {
+        "id": "활용",
+        "freq": 17,
+        "degree": 0.0541,
+        "betweenness": 0.0,
+        "eigenvector": 0.0249,
+        "community": 1,
+        "x": 0.2209,
+        "y": 0.4255
+      },
+      {
+        "id": "습관",
+        "freq": 17,
+        "degree": 0.0541,
+        "betweenness": 0.0541,
+        "eigenvector": 0.0143,
+        "community": 1,
+        "x": 0.1448,
+        "y": 0.6792
+      },
+      {
+        "id": "참여",
+        "freq": 16,
+        "degree": 0.0811,
+        "betweenness": 0.0541,
+        "eigenvector": 0.0816,
+        "community": 3,
+        "x": 0.8639,
+        "y": 0.1428
+      },
+      {
+        "id": "프로그램",
+        "freq": 16,
+        "degree": 0.1081,
+        "betweenness": 0.0676,
+        "eigenvector": 0.0635,
+        "community": 1,
+        "x": 0.3879,
+        "y": 0.3833
+      },
+      {
+        "id": "개인컵",
+        "freq": 16,
+        "degree": 0.0541,
+        "betweenness": 0.0,
+        "eigenvector": 0.1321,
+        "community": 0,
+        "x": 0.6274,
+        "y": 0.1471
+      },
+      {
+        "id": "일상",
+        "freq": 16,
+        "degree": 0.027,
+        "betweenness": 0.0,
+        "eigenvector": 0.0021,
+        "community": 1,
+        "x": 0.0,
+        "y": 0.7364
+      },
+      {
+        "id": "소비",
+        "freq": 15,
+        "degree": 0.027,
+        "betweenness": 0.0,
+        "eigenvector": 0.0124,
+        "community": 3,
+        "x": 1.0,
+        "y": 0.0
+      },
+      {
+        "id": "참여자",
+        "freq": 15,
+        "degree": 0.027,
+        "betweenness": 0.0,
+        "eigenvector": 0.0128,
+        "community": 1,
+        "x": 0.264,
+        "y": 0.2519
+      },
+      {
+        "id": "구입",
+        "freq": 15,
+        "degree": 0.0811,
+        "betweenness": 0.0135,
+        "eigenvector": 0.0399,
+        "community": 1,
+        "x": 0.265,
+        "y": 0.5095
+      }
+    ],
+    "edges": [
+      {
+        "source": "함께",
+        "target": "물건",
+        "weight": 0.408,
+        "count": 14
+      },
+      {
+        "source": "함께",
+        "target": "종사자",
+        "weight": 0.655,
+        "count": 25
+      },
+      {
+        "source": "함께",
+        "target": "교육",
+        "weight": 0.529,
+        "count": 17
+      },
+      {
+        "source": "함께",
+        "target": "센터",
+        "weight": 0.601,
+        "count": 27
+      },
+      {
+        "source": "함께",
+        "target": "시작",
+        "weight": 0.405,
+        "count": 10
+      },
+      {
+        "source": "함께",
+        "target": "지속",
+        "weight": 0.536,
+        "count": 18
+      },
+      {
+        "source": "함께",
+        "target": "계획",
+        "weight": 0.405,
+        "count": 10
+      },
+      {
+        "source": "함께",
+        "target": "가족",
+        "weight": 0.522,
+        "count": 16
+      },
+      {
+        "source": "함께",
+        "target": "개인컵",
+        "weight": 0.429,
+        "count": 11
+      },
+      {
+        "source": "센터",
+        "target": "개인",
+        "weight": 0.466,
+        "count": 14
+      },
+      {
+        "source": "센터",
+        "target": "노력",
+        "weight": 0.485,
+        "count": 18
+      },
+      {
+        "source": "센터",
+        "target": "중요",
+        "weight": 0.408,
+        "count": 10
+      },
+      {
+        "source": "센터",
+        "target": "가능",
+        "weight": 0.457,
+        "count": 12
+      },
+      {
+        "source": "센터",
+        "target": "교육",
+        "weight": 0.455,
+        "count": 14
+      },
+      {
+        "source": "센터",
+        "target": "종사자",
+        "weight": 0.52,
+        "count": 19
+      },
+      {
+        "source": "센터",
+        "target": "지속",
+        "weight": 0.498,
+        "count": 16
+      },
+      {
+        "source": "센터",
+        "target": "생활",
+        "weight": 0.431,
+        "count": 12
+      },
+      {
+        "source": "센터",
+        "target": "보호",
+        "weight": 0.444,
+        "count": 12
+      },
+      {
+        "source": "물건",
+        "target": "사람",
+        "weight": 0.5,
+        "count": 10
+      },
+      {
+        "source": "물건",
+        "target": "필요",
+        "weight": 0.643,
+        "count": 17
+      },
+      {
+        "source": "물건",
+        "target": "마켓",
+        "weight": 0.45,
+        "count": 9
+      },
+      {
+        "source": "물건",
+        "target": "물품",
+        "weight": 0.404,
+        "count": 7
+      },
+      {
+        "source": "물건",
+        "target": "구매",
+        "weight": 0.413,
+        "count": 8
+      },
+      {
+        "source": "필요",
+        "target": "개인",
+        "weight": 0.454,
+        "count": 11
+      },
+      {
+        "source": "필요",
+        "target": "종사자",
+        "weight": 0.475,
+        "count": 14
+      },
+      {
+        "source": "필요",
+        "target": "구매",
+        "weight": 0.488,
+        "count": 10
+      },
+      {
+        "source": "노력",
+        "target": "물품",
+        "weight": 0.408,
+        "count": 8
+      },
+      {
+        "source": "노력",
+        "target": "프로그램",
+        "weight": 0.408,
+        "count": 8
+      },
+      {
+        "source": "노력",
+        "target": "배달",
+        "weight": 0.53,
+        "count": 12
+      },
+      {
+        "source": "노력",
+        "target": "생활",
+        "weight": 0.417,
+        "count": 10
+      },
+      {
+        "source": "노력",
+        "target": "음식",
+        "weight": 0.49,
+        "count": 10
+      },
+      {
+        "source": "노력",
+        "target": "일회용품",
+        "weight": 0.429,
+        "count": 10
+      },
+      {
+        "source": "종사자",
+        "target": "사람",
+        "weight": 0.404,
+        "count": 9
+      },
+      {
+        "source": "종사자",
+        "target": "참여",
+        "weight": 0.448,
+        "count": 9
+      },
+      {
+        "source": "종사자",
+        "target": "기억",
+        "weight": 0.467,
+        "count": 9
+      },
+      {
+        "source": "종사자",
+        "target": "마켓",
+        "weight": 0.494,
+        "count": 11
+      },
+      {
+        "source": "종사자",
+        "target": "교육",
+        "weight": 0.613,
+        "count": 16
+      },
+      {
+        "source": "종사자",
+        "target": "지속",
+        "weight": 0.477,
+        "count": 13
+      },
+      {
+        "source": "종사자",
+        "target": "계획",
+        "weight": 0.448,
+        "count": 9
+      },
+      {
+        "source": "종사자",
+        "target": "개인컵",
+        "weight": 0.528,
+        "count": 11
+      },
+      {
+        "source": "지속",
+        "target": "가능",
+        "weight": 0.612,
+        "count": 12
+      },
+      {
+        "source": "지속",
+        "target": "마켓",
+        "weight": 0.408,
+        "count": 8
+      },
+      {
+        "source": "지속",
+        "target": "가족",
+        "weight": 0.411,
+        "count": 9
+      },
+      {
+        "source": "지속",
+        "target": "보호",
+        "weight": 0.495,
+        "count": 10
+      },
+      {
+        "source": "교육",
+        "target": "마켓",
+        "weight": 0.426,
+        "count": 8
+      },
+      {
+        "source": "교육",
+        "target": "시작",
+        "weight": 0.414,
+        "count": 7
+      },
+      {
+        "source": "교육",
+        "target": "계획",
+        "weight": 0.414,
+        "count": 7
+      },
+      {
+        "source": "가정",
+        "target": "가족",
+        "weight": 0.55,
+        "count": 11
+      },
+      {
+        "source": "가정",
+        "target": "구매",
+        "weight": 0.404,
+        "count": 7
+      },
+      {
+        "source": "가정",
+        "target": "배달",
+        "weight": 0.503,
+        "count": 9
+      },
+      {
+        "source": "가정",
+        "target": "변화",
+        "weight": 0.527,
+        "count": 10
+      },
+      {
+        "source": "가정",
+        "target": "비닐",
+        "weight": 0.452,
+        "count": 7
+      },
+      {
+        "source": "가정",
+        "target": "음식",
+        "weight": 0.496,
+        "count": 8
+      },
+      {
+        "source": "가정",
+        "target": "아이",
+        "weight": 0.447,
+        "count": 6
+      },
+      {
+        "source": "마켓",
+        "target": "물품",
+        "weight": 0.577,
+        "count": 8
+      },
+      {
+        "source": "마켓",
+        "target": "사람",
+        "weight": 0.438,
+        "count": 7
+      },
+      {
+        "source": "사람",
+        "target": "프로그램",
+        "weight": 0.433,
+        "count": 6
+      },
+      {
+        "source": "변화",
+        "target": "배달",
+        "weight": 0.589,
+        "count": 10
+      },
+      {
+        "source": "변화",
+        "target": "음식",
+        "weight": 0.458,
+        "count": 7
+      },
+      {
+        "source": "변화",
+        "target": "일회용품",
+        "weight": 0.4,
+        "count": 7
+      },
+      {
+        "source": "변화",
+        "target": "비닐",
+        "weight": 0.408,
+        "count": 6
+      },
+      {
+        "source": "변화",
+        "target": "제품",
+        "weight": 0.417,
+        "count": 5
+      },
+      {
+        "source": "개인",
+        "target": "참여",
+        "weight": 0.484,
+        "count": 8
+      },
+      {
+        "source": "생활",
+        "target": "일회용품",
+        "weight": 0.4,
+        "count": 7
+      },
+      {
+        "source": "보호",
+        "target": "가능",
+        "weight": 0.424,
+        "count": 7
+      },
+      {
+        "source": "음식",
+        "target": "배달",
+        "weight": 0.832,
+        "count": 12
+      },
+      {
+        "source": "음식",
+        "target": "일회용품",
+        "weight": 0.404,
+        "count": 6
+      },
+      {
+        "source": "음식",
+        "target": "비닐",
+        "weight": 0.48,
+        "count": 6
+      },
+      {
+        "source": "일회용품",
+        "target": "배달",
+        "weight": 0.485,
+        "count": 8
+      },
+      {
+        "source": "배달",
+        "target": "비닐",
+        "weight": 0.505,
+        "count": 7
+      },
+      {
+        "source": "구매",
+        "target": "제품",
+        "weight": 0.639,
+        "count": 7
+      },
+      {
+        "source": "구매",
+        "target": "물품",
+        "weight": 0.447,
+        "count": 6
+      },
+      {
+        "source": "구매",
+        "target": "습관",
+        "weight": 0.4,
+        "count": 6
+      },
+      {
+        "source": "구매",
+        "target": "구입",
+        "weight": 0.43,
+        "count": 5
+      },
+      {
+        "source": "물품",
+        "target": "구입",
+        "weight": 0.481,
+        "count": 5
+      },
+      {
+        "source": "물품",
+        "target": "프로그램",
+        "weight": 0.417,
+        "count": 5
+      },
+      {
+        "source": "물품",
+        "target": "활용",
+        "weight": 0.435,
+        "count": 5
+      },
+      {
+        "source": "활용",
+        "target": "구입",
+        "weight": 0.402,
+        "count": 4
+      },
+      {
+        "source": "습관",
+        "target": "일상",
+        "weight": 0.414,
+        "count": 6
+      },
+      {
+        "source": "참여",
+        "target": "소비",
+        "weight": 0.439,
+        "count": 5
+      },
+      {
+        "source": "프로그램",
+        "target": "참여자",
+        "weight": 0.583,
+        "count": 7
+      }
+    ],
+    "centralWords": [
+      {
+        "word": "종사자",
+        "degree": 0.2973,
+        "betweenness": 0.1562,
+        "eigenvector": 0.4131,
+        "freq": 41
+      },
+      {
+        "word": "센터",
+        "degree": 0.2703,
+        "betweenness": 0.2372,
+        "eigenvector": 0.3542,
+        "freq": 68
+      },
+      {
+        "word": "함께",
+        "degree": 0.2432,
+        "betweenness": 0.0991,
+        "eigenvector": 0.38,
+        "freq": 73
+      },
+      {
+        "word": "노력",
+        "degree": 0.1892,
+        "betweenness": 0.1532,
+        "eigenvector": 0.1594,
+        "freq": 47
+      },
+      {
+        "word": "지속",
+        "degree": 0.1892,
+        "betweenness": 0.0495,
+        "eigenvector": 0.3027,
+        "freq": 28
+      },
+      {
+        "word": "가정",
+        "degree": 0.1892,
+        "betweenness": 0.1441,
+        "eigenvector": 0.1182,
+        "freq": 28
+      },
+      {
+        "word": "구매",
+        "degree": 0.1892,
+        "betweenness": 0.2312,
+        "eigenvector": 0.1011,
+        "freq": 21
+      },
+      {
+        "word": "물품",
+        "degree": 0.1892,
+        "betweenness": 0.1261,
+        "eigenvector": 0.1281,
+        "freq": 20
+      },
+      {
+        "word": "물건",
+        "degree": 0.1622,
+        "betweenness": 0.0946,
+        "eigenvector": 0.1757,
+        "freq": 58
+      },
+      {
+        "word": "교육",
+        "degree": 0.1622,
+        "betweenness": 0.0465,
+        "eigenvector": 0.2832,
+        "freq": 28
+      },
+      {
+        "word": "마켓",
+        "degree": 0.1622,
+        "betweenness": 0.0586,
+        "eigenvector": 0.2285,
         "freq": 27
       },
       {
         "word": "변화",
-        "degree": 0.2308,
-        "betweenness": 0.0661,
-        "eigenvector": 0.0937,
+        "degree": 0.1622,
+        "betweenness": 0.024,
+        "eigenvector": 0.0983,
         "freq": 24
       },
       {
-        "word": "필요",
-        "degree": 0.2051,
-        "betweenness": 0.0027,
-        "eigenvector": 0.1458,
-        "freq": 47
+        "word": "음식",
+        "degree": 0.1622,
+        "betweenness": 0.0225,
+        "eigenvector": 0.1276,
+        "freq": 22
+      },
+      {
+        "word": "배달",
+        "degree": 0.1622,
+        "betweenness": 0.0,
+        "eigenvector": 0.1355,
+        "freq": 21
+      },
+      {
+        "word": "일회용품",
+        "degree": 0.1351,
+        "betweenness": 0.042,
+        "eigenvector": 0.0902,
+        "freq": 22
       }
     ],
-    "communityCount": 3
-  }
+    "communityCount": 4
+  },
+  "themes": [
+    {
+      "label": "직장·기관 차원의 실천",
+      "stage": 1,
+      "size": 18,
+      "words": [
+        "친환경소비행동",
+        "실천",
+        "활동",
+        "센터",
+        "환경",
+        "종사자",
+        "함께",
+        "교육",
+        "지속",
+        "행동"
+      ],
+      "lead": "친환경소비행동"
+    },
+    {
+      "label": "가정으로의 확산",
+      "stage": 2,
+      "size": 11,
+      "words": [
+        "사용",
+        "노력",
+        "가정",
+        "변화",
+        "일회용품",
+        "음식",
+        "배달",
+        "가족",
+        "비닐",
+        "생활"
+      ],
+      "lead": "사용"
+    },
+    {
+      "label": "소비 절제와 나눔",
+      "stage": 3,
+      "size": 11,
+      "words": [
+        "물건",
+        "마켓",
+        "필요",
+        "친환경",
+        "구매",
+        "물품",
+        "사람",
+        "프로그램",
+        "습관",
+        "제품"
+      ],
+      "lead": "물건"
+    }
+  ]
 }

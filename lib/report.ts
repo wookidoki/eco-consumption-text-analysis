@@ -47,27 +47,37 @@ export interface Report {
     byQuestion: { [key: string]: { word: string; count: number }[] };
   };
   tfidf: { [key: string]: { word: string; score: number }[] };
-  network: {
-    nodes: {
-      id: string;
-      freq: number;
-      degree: number;
-      betweenness: number;
-      eigenvector: number;
-      community: number;
-      x: number;
-      y: number;
-    }[];
-    edges: { source: string; target: string; weight: number; count: number }[];
-    centralWords: {
-      word: string;
-      degree: number;
-      betweenness: number;
-      eigenvector: number;
-      freq: number;
-    }[];
-    communityCount: number;
-  };
+  network: NetworkData;
+  networkLatent: NetworkData;
+  themes: {
+    label: string;
+    stage: number;
+    size: number;
+    words: string[];
+    lead: string;
+  }[];
+}
+
+export interface NetworkData {
+  nodes: {
+    id: string;
+    freq: number;
+    degree: number;
+    betweenness: number;
+    eigenvector: number;
+    community: number;
+    x: number;
+    y: number;
+  }[];
+  edges: { source: string; target: string; weight: number; count: number }[];
+  centralWords: {
+    word: string;
+    degree: number;
+    betweenness: number;
+    eigenvector: number;
+    freq: number;
+  }[];
+  communityCount: number;
 }
 
 export const report = reportData as unknown as Report;

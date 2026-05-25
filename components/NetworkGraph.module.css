@@ -6,6 +6,45 @@
   padding: 12px;
 }
 
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px 14px;
+}
+
+.toggle {
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 0.84rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.toggle:hover {
+  border-color: var(--primary);
+  color: var(--primary-dark);
+}
+
+.toggle.on {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.toolHint {
+  flex: 1 1 280px;
+  font-size: 0.8rem;
+  color: var(--faint);
+  line-height: 1.4;
+}
+
 .canvas {
   width: 100%;
   background: radial-gradient(circle at 50% 40%, #f3f8f4, #ffffff 70%);

@@ -45,6 +45,13 @@ USER_WORDS = [
     "정책제안", "지역사회", "이면지", "포스트잇", "에너지", "재활용", "업사이클링",
 ]
 
+# 의미 있는 부사: 명사만 추출하면 빠지지만 주제적으로 중요한 단어
+#   특히 '함께(공동 실천) vs 혼자(개인 실천)'는 인터뷰의 핵심 대비
+MEANINGFUL_ADV = {"함께", "혼자", "꾸준히", "서로", "스스로", "직접"}
+
+# 의미연결망 '잠재 구조' 분석 시 제외할 주제어(동어반복 허브)
+TOPIC_WORDS = {"친환경소비행동", "친환경", "실천", "활동", "사용", "환경", "행동"}
+
 # 불용어: 분석에 의미 없는 일반 명사/대명사/형식 명사
 STOPWORDS = {
     "것", "수", "때", "등", "점", "분", "더", "안", "중", "내", "나", "저", "그",
@@ -85,15 +92,18 @@ def build_kiwi():
     return kiwi
 
 
-def extract_nouns(kiwi, text):
-    """의미 있는 명사(NNG/NNP) 추출. 1글자/불용어 제거."""
-    nouns = []
+def extract_terms(kiwi, text):
+    """분석 대상 단어 추출: 명사(NNG/NNP) + 의미 있는 부사(MAG 허용목록).
+    1글자/불용어는 제거하되, 핵심 부사(함께·혼자 등)는 길이와 무관하게 보존."""
+    terms = []
     for tok in kiwi.tokenize(text):
+        form = tok.form
         if tok.tag in ("NNG", "NNP"):
-            form = tok.form
             if len(form) >= 2 and form not in STOPWORDS:
-                nouns.append(form)
-    return nouns
+                terms.append(form)
+        elif tok.tag == "MAG" and form in MEANINGFUL_ADV:
+            terms.append(form)
+    return terms
 
 
 def count_sentences(kiwi, text):
@@ -200,21 +210,21 @@ def keyword_report(tokens_by_row, rows, top_n=50):
 # 5) TF-IDF (질문별 변별 키워드) - 4개 질문을 문서로
 # -----------------------------------------------------------------------------
 def tfidf_report(tokens_by_row, rows, top_n=15):
-    docs = {q: [] for q in QUESTION_LABELS}
-    for r, toks in zip(rows, tokens_by_row):
-        docs[r["question"]].extend(toks)
-
-    corpus_keys = list(docs.keys())
-    corpus = [" ".join(docs[q]) for q in corpus_keys]
-
+    """응답자별 80개 문서로 TF-IDF를 계산해 IDF 변별력을 확보한 뒤,
+    각 질문에 속한 응답들의 평균 TF-IDF로 질문별 특징어를 도출한다."""
+    corpus = [" ".join(toks) for toks in tokens_by_row]
     vec = TfidfVectorizer(token_pattern=r"(?u)\b\w+\b")
-    mat = vec.fit_transform(corpus)
+    mat = vec.fit_transform(corpus).toarray()
     vocab = vec.get_feature_names_out()
 
     result = {}
-    for i, q in enumerate(corpus_keys):
-        row = mat[i].toarray()[0]
-        ranked = sorted(zip(vocab, row), key=lambda x: x[1], reverse=True)
+    for q in QUESTION_LABELS:
+        idx = [i for i, r in enumerate(rows) if r["question"] == q]
+        if not idx:
+            result[q] = []
+            continue
+        mean_vec = mat[idx].mean(axis=0)
+        ranked = sorted(zip(vocab, mean_vec), key=lambda x: x[1], reverse=True)
         result[q] = [
             {"word": w, "score": round(float(s), 4)}
             for w, s in ranked[:top_n] if s > 0
@@ -223,11 +233,58 @@ def tfidf_report(tokens_by_row, rows, top_n=15):
 
 
 # -----------------------------------------------------------------------------
+# 6b) 주제 테마(군집) 라벨링 - 실천 확산 단계로 해석
+# -----------------------------------------------------------------------------
+THEME_RULES = [
+    ("직장·기관 차원의 실천", 1,
+     ["센터", "종사자", "교육", "참여", "프로그램", "워크숍", "기관", "운영", "함께"]),
+    ("가정으로의 확산", 2,
+     ["가정", "가족", "아이", "음식", "배달", "생활", "자녀", "일상"]),
+    ("소비 절제와 나눔", 3,
+     ["마켓", "물건", "구매", "나눔", "물품", "활용", "제품", "소비", "필요", "교환"]),
+]
+
+
+def themes_report(network_nodes):
+    """의미연결망 군집을 '실천 확산 단계' 테마로 라벨링한다."""
+    by_comm = defaultdict(list)
+    for n in sorted(network_nodes, key=lambda x: -x["degree"]):
+        by_comm[n["community"]].append(n)
+
+    themes = []
+    used = set()
+    for comm, members in by_comm.items():
+        words = {m["id"] for m in members}
+        best, best_hits = None, 0
+        for label, stage, seeds in THEME_RULES:
+            hits = len(words & set(seeds))
+            if hits > best_hits:
+                best, best_hits = (label, stage), hits
+        if best and best[0] not in used:
+            label, stage = best
+            used.add(label)
+        else:
+            label, stage = f"기타 ({members[0]['id']} 중심)", 9
+        themes.append({
+            "label": label,
+            "stage": stage,
+            "size": len(members),
+            "words": [m["id"] for m in members[:10]],
+            "lead": members[0]["id"],
+        })
+    themes.sort(key=lambda t: t["stage"])
+    return themes
+
+
+# -----------------------------------------------------------------------------
 # 6) 의미연결망 + 중심성 (중심언어 도출)
 # -----------------------------------------------------------------------------
-def network_report(tokens_by_row, top_nodes=40, cos_threshold=0.4, top_central=15):
+def network_report(tokens_by_row, top_nodes=40, cos_threshold=0.4,
+                   top_central=15, exclude=None):
     """의미연결망: 응답 단위 동시출현을 Ochiai(코사인) 연관강도로 정규화해
-    '둘 다 흔해서 같이 나오는' 약한 연결을 걸러낸 뒤 중심성을 계산한다."""
+    '둘 다 흔해서 같이 나오는' 약한 연결을 걸러낸 뒤 중심성을 계산한다.
+    exclude: 노드에서 제외할 주제어 집합(잠재 구조 분석용)."""
+    exclude = exclude or set()
     freq = Counter()
     doc_sets = []
     for toks in tokens_by_row:
@@ -241,8 +298,8 @@ def network_report(tokens_by_row, top_nodes=40, cos_threshold=0.4, top_central=1
         for w in s:
             df[w] += 1
 
-    # 빈도 상위 단어만 노드로
-    node_words = [w for w, _ in freq.most_common(top_nodes)]
+    # 빈도 상위 단어만 노드로 (제외어 제거)
+    node_words = [w for w, _ in freq.most_common() if w not in exclude][:top_nodes]
     node_set = set(node_words)
 
     # 동시출현(응답 단위)
@@ -333,9 +390,12 @@ def main():
     print(f"[파싱] 응답 {len(rows)}건")
 
     kiwi = build_kiwi()
-    tokens_by_row = [extract_nouns(kiwi, r["text"]) for r in rows]
+    tokens_by_row = [extract_terms(kiwi, r["text"]) for r in rows]
     total_tokens = sum(len(t) for t in tokens_by_row)
-    print(f"[형태소] 추출 명사 토큰 {total_tokens:,}개")
+    print(f"[형태소] 추출 단어 토큰 {total_tokens:,}개 (명사 + 핵심 부사)")
+
+    network = network_report(tokens_by_row)
+    network_latent = network_report(tokens_by_row, exclude=TOPIC_WORDS)
 
     report = {
         "meta": {
@@ -344,12 +404,14 @@ def main():
             "generatedAt": datetime.now(KST).isoformat(),
             "source": "eco_review_final_test0520.txt",
             "questions": QUESTION_LABELS,
-            "method": "Kiwi 형태소분석 → 키워드 빈도 / TF-IDF / 의미연결망 중심성",
+            "method": "Kiwi 형태소분석 → 키워드 빈도 / TF-IDF(응답자 80문서) / 의미연결망 중심성",
         },
         "adequacy": adequacy_report(kiwi, rows),
         "keywords": keyword_report(tokens_by_row, rows),
         "tfidf": tfidf_report(tokens_by_row, rows),
-        "network": network_report(tokens_by_row),
+        "network": network,
+        "networkLatent": network_latent,
+        "themes": themes_report(network["nodes"]),
     }
 
     OUT_PUBLIC.parent.mkdir(parents=True, exist_ok=True)
