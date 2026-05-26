@@ -53,10 +53,9 @@ export default function BehaviorDirection({
   return (
     <div className={styles.wrap}>
       <p className={styles.intro}>
-        빈도·의미연결망 분석은 단어가 <b>얼마나</b> 나왔는지는 보여주지만, 그 행동이{" "}
-        <b>늘었는지 줄었는지(변화 방향)</b>는 알려주지 못합니다. 예를 들어 ‘배달’이
-        중요어로 나와도 그것이 증가인지 감소인지는 문장을 봐야 합니다. 아래는 응답 문장을 정독해
-        각 친환경 행동의 <b>변화 방향을 코딩</b>한 결과로, 근거 문장을 함께 제시합니다.
+        예를 들어 ‘배달’이 중요어로 나와도, <b>그것이 늘었는지 줄었는지는 문장을 봐야</b> 알 수
+        있습니다. 아래는 응답을 정독해 각 행동의 <b>변화 방향을 코딩</b>하고 근거 문장을 제시한
+        결과입니다.
       </p>
       <div className={styles.cols}>
         <Group

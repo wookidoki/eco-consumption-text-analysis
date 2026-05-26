@@ -13,9 +13,8 @@ export default function Keyness({
   return (
     <div className={styles.wrap}>
       <p className={styles.intro}>
-        단순 빈도가 아니라 <b>로그우도(Log-Likelihood)</b>로 “해당 질문에서 통계적으로
-        과대표집된 단어”를 도출합니다. 값이 클수록 그 질문에만 두드러진 단어이며,{" "}
-        <b>★ 표시는 통계적 유의수준</b>(★ p&lt;.05, ★★ p&lt;.01, ★★★ p&lt;.001)입니다.
+        막대 길이는 <b>로그우도(Log-Likelihood)</b> 값으로, 클수록 그 질문에만 두드러진
+        단어입니다. <b>★는 유의수준</b>(★ p&lt;.05, ★★ p&lt;.01, ★★★ p&lt;.001)을 뜻합니다.
       </p>
 
       <Figure

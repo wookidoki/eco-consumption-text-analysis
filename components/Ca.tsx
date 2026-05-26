@@ -8,9 +8,8 @@ export default function Ca({ ca }: { ca: Report["ca"] }) {
   return (
     <div className={styles.wrap}>
       <p className={styles.intro}>
-        <b>대응분석(Correspondence Analysis)</b>은 “질문 × 단어” 교차표를 2차원 평면에
-        배치해, 어떤 질문이 어떤 단어와 가깝게 연결되는지 한눈에 보여줍니다. 가까운 단어일수록
-        그 질문을 특징짓습니다.
+        그림에서 <b>질문(원)에 가까운 단어일수록 그 질문을 특징</b>짓습니다. 두 축은 단어
+        사용 패턴의 차이를 요약한 것으로, <b>멀리 떨어진 질문일수록 어휘 구성이 다릅니다.</b>
       </p>
 
       <div className={styles.row}>

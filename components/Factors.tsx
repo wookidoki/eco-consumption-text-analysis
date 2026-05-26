@@ -56,9 +56,9 @@ export default function Factors({ factors }: { factors: Report["factors"] }) {
   return (
     <div className={styles.wrap}>
       <p className={styles.intro}>
-        행동변화 연구의 핵심은 <b>무엇이 실천을 가능케 했고(촉진요인) 무엇이 가로막았나(장벽요인)</b>입니다.
-        응답 문장을 주제별로 코딩한 결과, <b>촉진요인이 장벽요인을 크게 압도</b>하며, 장벽은 대부분{" "}
-        <b>활동 초기의 막연함·귀찮음</b>으로 <b>반복·교육·공동 실천을 통해 극복</b>되는 양상을 보입니다.
+        응답 문장을 주제별로 코딩한 결과, <b>촉진요인이 장벽요인을 크게 압도</b>합니다. 장벽은
+        대부분 <b>활동 초기의 막연함·귀찮음</b>이었고 <b>반복·교육·공동 실천으로 극복</b>되는
+        양상을 보입니다.
       </p>
       <div className={styles.cols}>
         <Col
